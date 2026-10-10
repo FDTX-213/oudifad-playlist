@@ -1,82 +1,520 @@
 #EXTM3U
-#EXTINF:-1 tvg-name="- سفر التكوين" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر التكوين
-https://archive.org/download/20261009_20261009_0552/1%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D9%84%D8%AA%D9%83%D9%88%D9%8A%D9%86.mp3
-#EXTINF:-1 tvg-name="- سفر صموئيل الثانى" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر صموئيل الثانى
-https://archive.org/download/20261009_20261009_0552/10%20-%20%D8%B3%D9%81%D8%B1%20%D8%B5%D9%85%D9%88%D8%A6%D9%8A%D9%84%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%89.mp3
-#EXTINF:-1 tvg-name="- سفر ملوك الاول" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر ملوك الاول
-https://archive.org/download/20261009_20261009_0552/11%20-%20%D8%B3%D9%81%D8%B1%20%D9%85%D9%84%D9%88%D9%83%20%D8%A7%D9%84%D8%A7%D9%88%D9%84.mp3
-#EXTINF:-1 tvg-name="- سفر ملوك الثانى" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر ملوك الثانى
-https://archive.org/download/20261009_20261009_0552/12%20-%20%D8%B3%D9%81%D8%B1%20%D9%85%D9%84%D9%88%D9%83%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%89.mp3
-#EXTINF:-1 tvg-name="- سفر اخبار الايام الاول" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر اخبار الايام الاول
-https://archive.org/download/20261009_20261009_0552/13%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%A7%D9%8A%D8%A7%D9%85%20%D8%A7%D9%84%D8%A7%D9%88%D9%84.mp3
-#EXTINF:-1 tvg-name="- سفر اخبار الايام الثانى" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر اخبار الايام الثانى
-https://archive.org/download/20261009_20261009_0552/14%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%A7%D9%8A%D8%A7%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%89.mp3
-#EXTINF:-1 tvg-name="- سفر عزرا" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر عزرا
-https://archive.org/download/20261009_20261009_0552/15%20-%20%D8%B3%D9%81%D8%B1%20%D8%B9%D8%B2%D8%B1%D8%A7.mp3
-#EXTINF:-1 tvg-name="- سفر نحميا" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر نحميا
-https://archive.org/download/20261009_20261009_0552/16%20-%20%D8%B3%D9%81%D8%B1%20%D9%86%D8%AD%D9%85%D9%8A%D8%A7.mp3
-#EXTINF:-1 tvg-name="- سفر استير" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر استير
-https://archive.org/download/20261009_20261009_0552/17%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D8%B3%D8%AA%D9%8A%D8%B1.mp3
-#EXTINF:-1 tvg-name="- سفر أيوب" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر أيوب
-https://archive.org/download/20261009_20261009_0552/18%20-%20%D8%B3%D9%81%D8%B1%20%D8%A3%D9%8A%D9%88%D8%A8.mp3
-#EXTINF:-1 tvg-name="- سفر المزامير" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر المزامير
-https://archive.org/download/20261009_20261009_0552/19%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D9%84%D9%85%D8%B2%D8%A7%D9%85%D9%8A%D8%B1.mp3
-#EXTINF:-1 tvg-name="- سفر الخروج" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر الخروج
-https://archive.org/download/20261009_20261009_0552/2%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D9%84%D8%AE%D8%B1%D9%88%D8%AC.mp3
-#EXTINF:-1 tvg-name="- سفر الامثال" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر الامثال
-https://archive.org/download/20261009_20261009_0552/20%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D9%84%D8%A7%D9%85%D8%AB%D8%A7%D9%84.mp3
-#EXTINF:-1 tvg-name="- سفر الجامعة" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر الجامعة
-https://archive.org/download/20261009_20261009_0552/21%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9%D8%A9.mp3
-#EXTINF:-1 tvg-name="- سفر نشيد الانشاد" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر نشيد الانشاد
-https://archive.org/download/20261009_20261009_0552/22%20-%20%D8%B3%D9%81%D8%B1%20%D9%86%D8%B4%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D9%86%D8%B4%D8%A7%D8%AF.mp3
-#EXTINF:-1 tvg-name="- سفر اشعــــياء" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر اشعــــياء
-https://archive.org/download/20261009_20261009_0552/23%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D8%B4%D8%B9%D9%80%D9%80%D9%80%D9%80%D9%8A%D8%A7%D8%A1.mp3
-#EXTINF:-1 tvg-name="- سفر ارميا" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر ارميا
-https://archive.org/download/20261009_20261009_0552/24%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D8%B1%D9%85%D9%8A%D8%A7.mp3
-#EXTINF:-1 tvg-name="- سفر مراثى ارميا" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر مراثى ارميا
-https://archive.org/download/20261009_20261009_0552/25%20-%20%D8%B3%D9%81%D8%B1%20%D9%85%D8%B1%D8%A7%D8%AB%D9%89%20%D8%A7%D8%B1%D9%85%D9%8A%D8%A7.mp3
-#EXTINF:-1 tvg-name="- سفر حزقيال" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر حزقيال
-https://archive.org/download/20261009_20261009_0552/26%20-%20%D8%B3%D9%81%D8%B1%20%D8%AD%D8%B2%D9%82%D9%8A%D8%A7%D9%84.mp3
-#EXTINF:-1 tvg-name="- سفر دانيال" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر دانيال
-https://archive.org/download/20261009_20261009_0552/27%20-%20%D8%B3%D9%81%D8%B1%20%D8%AF%D8%A7%D9%86%D9%8A%D8%A7%D9%84.mp3
-#EXTINF:-1 tvg-name="- سفر هوشع" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر هوشع
-https://archive.org/download/20261009_20261009_0552/28%20-%20%D8%B3%D9%81%D8%B1%20%D9%87%D9%88%D8%B4%D8%B9.mp3
-#EXTINF:-1 tvg-name="- سفر يوئيل" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر يوئيل
-https://archive.org/download/20261009_20261009_0552/29%20-%20%D8%B3%D9%81%D8%B1%20%D9%8A%D9%88%D8%A6%D9%8A%D9%84.mp3
-#EXTINF:-1 tvg-name="- سفر الاويين" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر الاويين
-https://archive.org/download/20261009_20261009_0552/3%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D9%84%D8%A7%D9%88%D9%8A%D9%8A%D9%86.mp3
-#EXTINF:-1 tvg-name="- سفر عاموس" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر عاموس
-https://archive.org/download/20261009_20261009_0552/30%20-%20%D8%B3%D9%81%D8%B1%20%D8%B9%D8%A7%D9%85%D9%88%D8%B3.mp3
-#EXTINF:-1 tvg-name="- سفر عوبديا" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر عوبديا
-https://archive.org/download/20261009_20261009_0552/31%20-%20%D8%B3%D9%81%D8%B1%20%D8%B9%D9%88%D8%A8%D8%AF%D9%8A%D8%A7.mp3
-#EXTINF:-1 tvg-name="- سفر يونان" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر يونان
-https://archive.org/download/20261009_20261009_0552/32%20-%20%D8%B3%D9%81%D8%B1%20%D9%8A%D9%88%D9%86%D8%A7%D9%86.mp3
-#EXTINF:-1 tvg-name="- سفر ميخـــا" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر ميخـــا
-https://archive.org/download/20261009_20261009_0552/33%20-%20%D8%B3%D9%81%D8%B1%20%D9%85%D9%8A%D8%AE%D9%80%D9%80%D9%80%D8%A7.mp3
-#EXTINF:-1 tvg-name="- سفر ناحوم" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر ناحوم
-https://archive.org/download/20261009_20261009_0552/34%20-%20%D8%B3%D9%81%D8%B1%20%D9%86%D8%A7%D8%AD%D9%88%D9%85.mp3
-#EXTINF:-1 tvg-name="- سفر حبقوق" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر حبقوق
-https://archive.org/download/20261009_20261009_0552/35%20-%20%D8%B3%D9%81%D8%B1%20%D8%AD%D8%A8%D9%82%D9%88%D9%82.mp3
-#EXTINF:-1 tvg-name="- سفر صفنيا" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر صفنيا
-https://archive.org/download/20261009_20261009_0552/36%20-%20%D8%B3%D9%81%D8%B1%20%D8%B5%D9%81%D9%86%D9%8A%D8%A7.mp3
-#EXTINF:-1 tvg-name="- سفر حجى" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر حجى
-https://archive.org/download/20261009_20261009_0552/37%20-%20%D8%B3%D9%81%D8%B1%20%D8%AD%D8%AC%D9%89.mp3
-#EXTINF:-1 tvg-name="- سفر زكريا" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر زكريا
-https://archive.org/download/20261009_20261009_0552/38%20-%20%D8%B3%D9%81%D8%B1%20%D8%B2%D9%83%D8%B1%D9%8A%D8%A7.mp3
-#EXTINF:-1 tvg-name="- سفر ملاخى" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر ملاخى
-https://archive.org/download/20261009_20261009_0552/39%20-%20%D8%B3%D9%81%D8%B1%20%D9%85%D9%84%D8%A7%D8%AE%D9%89.mp3
-#EXTINF:-1 tvg-name="- سفر العدد" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر العدد
-https://archive.org/download/20261009_20261009_0552/4%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D9%84%D8%B9%D8%AF%D8%AF.mp3
-#EXTINF:-1 tvg-name="- سفر التثنيــة" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر التثنيــة
-https://archive.org/download/20261009_20261009_0552/5%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D9%84%D8%AA%D8%AB%D9%86%D9%8A%D9%80%D9%80%D8%A9.mp3
-#EXTINF:-1 tvg-name="- سفر يشوع" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر يشوع
-https://archive.org/download/20261009_20261009_0552/6%20-%20%D8%B3%D9%81%D8%B1%20%D9%8A%D8%B4%D9%88%D8%B9.mp3
-#EXTINF:-1 tvg-name="- سفر القضاة" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر القضاة
-https://archive.org/download/20261009_20261009_0552/7%20-%20%D8%B3%D9%81%D8%B1%20%D8%A7%D9%84%D9%82%D8%B6%D8%A7%D8%A9.mp3
-#EXTINF:-1 tvg-name="- سفر راعوت" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر راعوت
-https://archive.org/download/20261009_20261009_0552/8%20-%20%D8%B3%D9%81%D8%B1%20%20%D8%B1%D8%A7%D8%B9%D9%88%D8%AA.mp3
-#EXTINF:-1 tvg-name="- سفر صموئيل الاول" tvg-logo="https://archive.org/services/img/20261009_20261009_0552" group-title="الكتاب المقدس - العهد القديم",- سفر صموئيل الاول
-https://archive.org/download/20261009_20261009_0552/9%20-%20%D8%B3%D9%81%D8%B1%20%D8%B5%D9%85%D9%88%D8%A6%D9%8A%D9%84%20%D8%A7%D9%84%D8%A7%D9%88%D9%84.mp3
+#EXTINF:-1 tvg-name="سفر1 التكوين בראשית" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر1 التكوين בראשית
+https://archive.org/download/20261010_20261010_0257/01%D8%B3%D9%81%D8%B11%20%D8%A7%D9%84%D8%AA%D9%83%D9%88%D9%8A%D9%86%20%D7%91%D7%A8%D7%90%D7%A9%D7%99%D7%AA.mp3
+#EXTINF:-1 tvg-name="سفر2 الخروج שמות" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر2 الخروج שמות
+https://archive.org/download/20261010_20261010_0257/02%D8%B3%D9%81%D8%B12%20%D8%A7%D9%84%D8%AE%D8%B1%D9%88%D8%AC%20%D7%A9%D7%9E%D7%95%D7%AA.mp3
+#EXTINF:-1 tvg-name="سفر3 الأحبار اللاويين ויקרא" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر3 الأحبار اللاويين ויקרא
+https://archive.org/download/20261010_20261010_0257/03%D8%B3%D9%81%D8%B13%20%D8%A7%D9%84%D8%A3%D8%AD%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D9%84%D8%A7%D9%88%D9%8A%D9%8A%D9%86%20%D7%95%D7%99%D7%A7%D7%A8%D7%90.mp3
+#EXTINF:-1 tvg-name="سفر4 العدد במדבר" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر4 العدد במדבר
+https://archive.org/download/20261010_20261010_0257/04%D8%B3%D9%81%D8%B14%20%D8%A7%D9%84%D8%B9%D8%AF%D8%AF%20%D7%91%D7%9E%D7%93%D7%91%D7%A8.mp3
+#EXTINF:-1 tvg-name="سفر5 تثنية الاشتراع דברים" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر5 تثنية الاشتراع דברים
+https://archive.org/download/20261010_20261010_0257/05%D8%B3%D9%81%D8%B15%20%D8%AA%D8%AB%D9%86%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D8%B9%20%D7%93%D7%91%D7%A8%D7%99%D7%9D.mp3
+#EXTINF:-1 tvg-name="سفر6 يشوع יהושע" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر6 يشوع יהושע
+https://archive.org/download/20261010_20261010_0257/06%D8%B3%D9%81%D8%B16%20%D9%8A%D8%B4%D9%88%D8%B9%20%D7%99%D7%94%D7%95%D7%A9%D7%A2.mp3
+#EXTINF:-1 tvg-name="سفر7 القضاة שופטים" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر7 القضاة שופטים
+https://archive.org/download/20261010_20261010_0257/07%D8%B3%D9%81%D8%B17%20%D8%A7%D9%84%D9%82%D8%B6%D8%A7%D8%A9%20%D7%A9%D7%95%D7%A4%D7%98%D7%99%D7%9D.mp3
+#EXTINF:-1 tvg-name="سفر8 راعوث רות" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر8 راعوث רות
+https://archive.org/download/20261010_20261010_0257/08%D8%B3%D9%81%D8%B18%20%D8%B1%D8%A7%D8%B9%D9%88%D8%AB%20%D7%A8%D7%95%D7%AA.mp3
+#EXTINF:-1 tvg-name="سفر9 صموئيل الأول שמואל א" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر9 صموئيل الأول שמואל א
+https://archive.org/download/20261010_20261010_0257/09%D8%B3%D9%81%D8%B19%20%D8%B5%D9%85%D9%88%D8%A6%D9%8A%D9%84%20%D8%A7%D9%84%D8%A3%D9%88%D9%84%20%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90.mp3
+#EXTINF:-1 tvg-name="سفر10 صموئيل الثاني שמואל ב" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر10 صموئيل الثاني שמואל ב
+https://archive.org/download/20261010_20261010_0257/10%D8%B3%D9%81%D8%B110%20%D8%B5%D9%85%D9%88%D8%A6%D9%8A%D9%84%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%20%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91.mp3
+#EXTINF:-1 tvg-name="سفر11 الملوك الأول מלכים א" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر11 الملوك الأول מלכים א
+https://archive.org/download/20261010_20261010_0257/11%D8%B3%D9%81%D8%B111%20%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%83%20%D8%A7%D9%84%D8%A3%D9%88%D9%84%20%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90.mp3
+#EXTINF:-1 tvg-name="سفر12 الملوك الثاني מלכים ב" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر12 الملوك الثاني מלכים ב
+https://archive.org/download/20261010_20261010_0257/12%D8%B3%D9%81%D8%B112%20%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%83%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%20%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91.mp3
+#EXTINF:-1 tvg-name="سفر13 أخبار الأيام الأول דברי הימים א" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر13 أخبار الأيام الأول דברי הימים א
+https://archive.org/download/20261010_20261010_0257/13%D8%B3%D9%81%D8%B113%20%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%A3%D9%8A%D8%A7%D9%85%20%D8%A7%D9%84%D8%A3%D9%88%D9%84%20%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90.mp3
+#EXTINF:-1 tvg-name="سفر14 أخبار الأيام الثاني דברי הימים ב" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر14 أخبار الأيام الثاني דברי הימים ב
+https://archive.org/download/20261010_20261010_0257/14%D8%B3%D9%81%D8%B114%20%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%84%D8%A3%D9%8A%D8%A7%D9%85%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%20%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91.mp3
+#EXTINF:-1 tvg-name="سفر15 عزرا עזרא" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر15 عزرا עזרא
+https://archive.org/download/20261010_20261010_0257/15%D8%B3%D9%81%D8%B115%20%D8%B9%D8%B2%D8%B1%D8%A7%20%D7%A2%D7%96%D7%A8%D7%90.mp3
+#EXTINF:-1 tvg-name="سفر16 نحميا נחמיה" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر16 نحميا נחמיה
+https://archive.org/download/20261010_20261010_0257/16%D8%B3%D9%81%D8%B116%20%D9%86%D8%AD%D9%85%D9%8A%D8%A7%20%D7%A0%D7%97%D7%9E%D7%99%D7%94.mp3
+#EXTINF:-1 tvg-name="سفر17 طوبيا" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر17 طوبيا
+https://archive.org/download/20261010_20261010_0257/17%D8%B3%D9%81%D8%B117%20%D8%B7%D9%88%D8%A8%D9%8A%D8%A7.mp3
+#EXTINF:-1 tvg-name="سفر18 يهوديت" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر18 يهوديت
+https://archive.org/download/20261010_20261010_0257/18%D8%B3%D9%81%D8%B118%20%D9%8A%D9%87%D9%88%D8%AF%D9%8A%D8%AA.mp3
+#EXTINF:-1 tvg-name="سفر19 أستير אסתר" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر19 أستير אסתר
+https://archive.org/download/20261010_20261010_0257/19%D8%B3%D9%81%D8%B119%20%D8%A3%D8%B3%D8%AA%D9%8A%D8%B1%20%D7%90%D7%A1%D7%AA%D7%A8.mp3
+#EXTINF:-1 tvg-name="سفر20 أيوب איוב" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر20 أيوب איוב
+https://archive.org/download/20261010_20261010_0257/20%D8%B3%D9%81%D8%B120%20%D8%A3%D9%8A%D9%88%D8%A8%20%D7%90%D7%99%D7%95%D7%91.mp3
+#EXTINF:-1 tvg-name="سفر21 المزامير תהילים" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر21 المزامير תהילים
+https://archive.org/download/20261010_20261010_0257/21%D8%B3%D9%81%D8%B121%20%D8%A7%D9%84%D9%85%D8%B2%D8%A7%D9%85%D9%8A%D8%B1%20%D7%AA%D7%94%D7%99%D7%9C%D7%99%D7%9D.mp3
+#EXTINF:-1 tvg-name="سفر22 الأمثال משלי" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر22 الأمثال משלי
+https://archive.org/download/20261010_20261010_0257/22%D8%B3%D9%81%D8%B122%20%D8%A7%D9%84%D8%A3%D9%85%D8%AB%D8%A7%D9%84%20%D7%9E%D7%A9%D7%9C%D7%99.mp3
+#EXTINF:-1 tvg-name="سفر23 الجامعة קהלת" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر23 الجامعة קהלת
+https://archive.org/download/20261010_20261010_0257/23%D8%B3%D9%81%D8%B123%20%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9%D8%A9%20%D7%A7%D7%94%D7%9C%D7%AA.mp3
+#EXTINF:-1 tvg-name="سفر24 نشيد الأنشاد שיר השירים" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر24 نشيد الأنشاد שיר השירים
+https://archive.org/download/20261010_20261010_0257/24%D8%B3%D9%81%D8%B124%20%D9%86%D8%B4%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A3%D9%86%D8%B4%D8%A7%D8%AF%20%D7%A9%D7%99%D7%A8%20%D7%94%D7%A9%D7%99%D7%A8%D7%99%D7%9D.mp3
+#EXTINF:-1 tvg-name="سفر25 الحكمة" tvg-logo="https://archive.org/services/img/20261010_20261010_0257" group-title="الكتاب المقدس - العهد القديم بالعربية",سفر25 الحكمة
+https://archive.org/download/20261010_20261010_0257/25%D8%B3%D9%81%D8%B125%20%D8%A7%D9%84%D8%AD%D9%83%D9%85%D8%A9.mp3
+#EXTINF:-1 tvg-name="سفر1 التكوين בראשית" tvg-logo="https://archive.org/services/img/20261010_20261010_0157" group-title="التوراة أسفار موسى الخمسة بالعبرية",سفر1 التكوين בראשית
+https://archive.org/download/20261010_20261010_0157/01%D8%B3%D9%81%D8%B11%20%D8%A7%D9%84%D8%AA%D9%83%D9%88%D9%8A%D9%86%20%D7%91%D7%A8%D7%90%D7%A9%D7%99%D7%AA.mp3
+#EXTINF:-1 tvg-name="سفر2 الخروج שמות" tvg-logo="https://archive.org/services/img/20261010_20261010_0157" group-title="التوراة أسفار موسى الخمسة بالعبرية",سفر2 الخروج שמות
+https://archive.org/download/20261010_20261010_0157/02%D8%B3%D9%81%D8%B12%20%D8%A7%D9%84%D8%AE%D8%B1%D9%88%D8%AC%20%D7%A9%D7%9E%D7%95%D7%AA.mp3
+#EXTINF:-1 tvg-name="سفر3 اللاويين ויקרא" tvg-logo="https://archive.org/services/img/20261010_20261010_0157" group-title="التوراة أسفار موسى الخمسة بالعبرية",سفر3 اللاويين ויקרא
+https://archive.org/download/20261010_20261010_0157/03%D8%B3%D9%81%D8%B13%20%D8%A7%D9%84%D9%84%D8%A7%D9%88%D9%8A%D9%8A%D9%86%20%D7%95%D7%99%D7%A7%D7%A8%D7%90.mp3
+#EXTINF:-1 tvg-name="سفر4 العدد במדבר" tvg-logo="https://archive.org/services/img/20261010_20261010_0157" group-title="التوراة أسفار موسى الخمسة بالعبرية",سفر4 العدد במדבר
+https://archive.org/download/20261010_20261010_0157/04%D8%B3%D9%81%D8%B14%20%D8%A7%D9%84%D8%B9%D8%AF%D8%AF%20%D7%91%D7%9E%D7%93%D7%91%D7%A8.mp3
+#EXTINF:-1 tvg-name="سفر5 التثنية דברים" tvg-logo="https://archive.org/services/img/20261010_20261010_0157" group-title="التوراة أسفار موسى الخمسة بالعبرية",سفر5 التثنية דברים
+https://archive.org/download/20261010_20261010_0157/05%D8%B3%D9%81%D8%B15%20%D8%A7%D9%84%D8%AA%D8%AB%D9%86%D9%8A%D8%A9%20%D7%93%D7%91%D7%A8%D7%99%D7%9D.mp3
+#EXTINF:-1 tvg-name="- الفاتحة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الفاتحة
+https://archive.org/download/20261010_20261010_0045/001%20-%20%D8%A7%D9%84%D9%81%D8%A7%D8%AA%D8%AD%D8%A9.mp3
+#EXTINF:-1 tvg-name="- البقرة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- البقرة
+https://archive.org/download/20261010_20261010_0045/002%20-%20%D8%A7%D9%84%D8%A8%D9%82%D8%B1%D8%A9.mp3
+#EXTINF:-1 tvg-name="- آل عمران" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- آل عمران
+https://archive.org/download/20261010_20261010_0045/003%20-%20%D8%A2%D9%84%20%D8%B9%D9%85%D8%B1%D8%A7%D9%86.mp3
+#EXTINF:-1 tvg-name="- النساء" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- النساء
+https://archive.org/download/20261010_20261010_0045/004%20-%20%D8%A7%D9%84%D9%86%D8%B3%D8%A7%D8%A1.mp3
+#EXTINF:-1 tvg-name="- المائدة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- المائدة
+https://archive.org/download/20261010_20261010_0045/005%20-%20%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D8%AF%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الأنعام" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الأنعام
+https://archive.org/download/20261010_20261010_0045/006%20-%20%D8%A7%D9%84%D8%A3%D9%86%D8%B9%D8%A7%D9%85.mp3
+#EXTINF:-1 tvg-name="- الأعراف" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الأعراف
+https://archive.org/download/20261010_20261010_0045/007%20-%20%D8%A7%D9%84%D8%A3%D8%B9%D8%B1%D8%A7%D9%81.mp3
+#EXTINF:-1 tvg-name="- الأنفال" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الأنفال
+https://archive.org/download/20261010_20261010_0045/008%20-%20%D8%A7%D9%84%D8%A3%D9%86%D9%81%D8%A7%D9%84.mp3
+#EXTINF:-1 tvg-name="- التوبة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- التوبة
+https://archive.org/download/20261010_20261010_0045/009%20-%20%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D8%A9.mp3
+#EXTINF:-1 tvg-name="- يونس" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- يونس
+https://archive.org/download/20261010_20261010_0045/010%20-%20%D9%8A%D9%88%D9%86%D8%B3.mp3
+#EXTINF:-1 tvg-name="- هود" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- هود
+https://archive.org/download/20261010_20261010_0045/011%20-%20%D9%87%D9%88%D8%AF.mp3
+#EXTINF:-1 tvg-name="- يوسف" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- يوسف
+https://archive.org/download/20261010_20261010_0045/012%20-%20%D9%8A%D9%88%D8%B3%D9%81.mp3
+#EXTINF:-1 tvg-name="- الرعد" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الرعد
+https://archive.org/download/20261010_20261010_0045/013%20-%20%D8%A7%D9%84%D8%B1%D8%B9%D8%AF.mp3
+#EXTINF:-1 tvg-name="- إبراهيم" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- إبراهيم
+https://archive.org/download/20261010_20261010_0045/014%20-%20%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85.mp3
+#EXTINF:-1 tvg-name="- الحجر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الحجر
+https://archive.org/download/20261010_20261010_0045/015%20-%20%D8%A7%D9%84%D8%AD%D8%AC%D8%B1.mp3
+#EXTINF:-1 tvg-name="- النحل" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- النحل
+https://archive.org/download/20261010_20261010_0045/016%20-%20%D8%A7%D9%84%D9%86%D8%AD%D9%84.mp3
+#EXTINF:-1 tvg-name="- الإسراء" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الإسراء
+https://archive.org/download/20261010_20261010_0045/017%20-%20%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A1.mp3
+#EXTINF:-1 tvg-name="- الكهف" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الكهف
+https://archive.org/download/20261010_20261010_0045/018%20-%20%D8%A7%D9%84%D9%83%D9%87%D9%81.mp3
+#EXTINF:-1 tvg-name="- مريم" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- مريم
+https://archive.org/download/20261010_20261010_0045/019%20-%20%D9%85%D8%B1%D9%8A%D9%85.mp3
+#EXTINF:-1 tvg-name="- طه" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- طه
+https://archive.org/download/20261010_20261010_0045/020%20-%20%D8%B7%D9%87.mp3
+#EXTINF:-1 tvg-name="- الأنبياء" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الأنبياء
+https://archive.org/download/20261010_20261010_0045/021%20-%20%D8%A7%D9%84%D8%A3%D9%86%D8%A8%D9%8A%D8%A7%D8%A1.mp3
+#EXTINF:-1 tvg-name="- الحج" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الحج
+https://archive.org/download/20261010_20261010_0045/022%20-%20%D8%A7%D9%84%D8%AD%D8%AC.mp3
+#EXTINF:-1 tvg-name="- المؤمنون" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- المؤمنون
+https://archive.org/download/20261010_20261010_0045/023%20-%20%D8%A7%D9%84%D9%85%D8%A4%D9%85%D9%86%D9%88%D9%86.mp3
+#EXTINF:-1 tvg-name="- النور" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- النور
+https://archive.org/download/20261010_20261010_0045/024%20-%20%D8%A7%D9%84%D9%86%D9%88%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الفرقان" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الفرقان
+https://archive.org/download/20261010_20261010_0045/025%20-%20%D8%A7%D9%84%D9%81%D8%B1%D9%82%D8%A7%D9%86.mp3
+#EXTINF:-1 tvg-name="- الشعراء" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الشعراء
+https://archive.org/download/20261010_20261010_0045/026%20-%20%D8%A7%D9%84%D8%B4%D8%B9%D8%B1%D8%A7%D8%A1.mp3
+#EXTINF:-1 tvg-name="- النمل" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- النمل
+https://archive.org/download/20261010_20261010_0045/027%20-%20%D8%A7%D9%84%D9%86%D9%85%D9%84.mp3
+#EXTINF:-1 tvg-name="- القصص" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- القصص
+https://archive.org/download/20261010_20261010_0045/028%20-%20%D8%A7%D9%84%D9%82%D8%B5%D8%B5.mp3
+#EXTINF:-1 tvg-name="- العنكبوت" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- العنكبوت
+https://archive.org/download/20261010_20261010_0045/029%20-%20%D8%A7%D9%84%D8%B9%D9%86%D9%83%D8%A8%D9%88%D8%AA.mp3
+#EXTINF:-1 tvg-name="- الروم" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الروم
+https://archive.org/download/20261010_20261010_0045/030%20-%20%D8%A7%D9%84%D8%B1%D9%88%D9%85.mp3
+#EXTINF:-1 tvg-name="- لقمان" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- لقمان
+https://archive.org/download/20261010_20261010_0045/031%20-%20%D9%84%D9%82%D9%85%D8%A7%D9%86.mp3
+#EXTINF:-1 tvg-name="- السجدة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- السجدة
+https://archive.org/download/20261010_20261010_0045/032%20-%20%D8%A7%D9%84%D8%B3%D8%AC%D8%AF%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الأحزاب" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الأحزاب
+https://archive.org/download/20261010_20261010_0045/033%20-%20%D8%A7%D9%84%D8%A3%D8%AD%D8%B2%D8%A7%D8%A8.mp3
+#EXTINF:-1 tvg-name="- سبأ" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- سبأ
+https://archive.org/download/20261010_20261010_0045/034%20-%20%D8%B3%D8%A8%D8%A3.mp3
+#EXTINF:-1 tvg-name="- فاطر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- فاطر
+https://archive.org/download/20261010_20261010_0045/035%20-%20%D9%81%D8%A7%D8%B7%D8%B1.mp3
+#EXTINF:-1 tvg-name="- يس" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- يس
+https://archive.org/download/20261010_20261010_0045/036%20-%20%D9%8A%D8%B3.mp3
+#EXTINF:-1 tvg-name="- الصافات" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الصافات
+https://archive.org/download/20261010_20261010_0045/037%20-%20%D8%A7%D9%84%D8%B5%D8%A7%D9%81%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- ص" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- ص
+https://archive.org/download/20261010_20261010_0045/038%20-%20%D8%B5.mp3
+#EXTINF:-1 tvg-name="- الزمر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الزمر
+https://archive.org/download/20261010_20261010_0045/039%20-%20%D8%A7%D9%84%D8%B2%D9%85%D8%B1.mp3
+#EXTINF:-1 tvg-name="- غافر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- غافر
+https://archive.org/download/20261010_20261010_0045/040%20-%20%D8%BA%D8%A7%D9%81%D8%B1.mp3
+#EXTINF:-1 tvg-name="- فصلت" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- فصلت
+https://archive.org/download/20261010_20261010_0045/041%20-%20%D9%81%D8%B5%D9%84%D8%AA.mp3
+#EXTINF:-1 tvg-name="- الشورى" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الشورى
+https://archive.org/download/20261010_20261010_0045/042%20-%20%D8%A7%D9%84%D8%B4%D9%88%D8%B1%D9%89.mp3
+#EXTINF:-1 tvg-name="- الزخرف" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الزخرف
+https://archive.org/download/20261010_20261010_0045/043%20-%20%D8%A7%D9%84%D8%B2%D8%AE%D8%B1%D9%81.mp3
+#EXTINF:-1 tvg-name="- الدخان" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الدخان
+https://archive.org/download/20261010_20261010_0045/044%20-%20%D8%A7%D9%84%D8%AF%D8%AE%D8%A7%D9%86.mp3
+#EXTINF:-1 tvg-name="- الجاثية" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الجاثية
+https://archive.org/download/20261010_20261010_0045/045%20-%20%D8%A7%D9%84%D8%AC%D8%A7%D8%AB%D9%8A%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الأحقاف" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الأحقاف
+https://archive.org/download/20261010_20261010_0045/046%20-%20%D8%A7%D9%84%D8%A3%D8%AD%D9%82%D8%A7%D9%81.mp3
+#EXTINF:-1 tvg-name="- محمد" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- محمد
+https://archive.org/download/20261010_20261010_0045/047%20-%20%D9%85%D8%AD%D9%85%D8%AF.mp3
+#EXTINF:-1 tvg-name="- الفتح" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الفتح
+https://archive.org/download/20261010_20261010_0045/048%20-%20%D8%A7%D9%84%D9%81%D8%AA%D8%AD.mp3
+#EXTINF:-1 tvg-name="- الحجرات" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الحجرات
+https://archive.org/download/20261010_20261010_0045/049%20-%20%D8%A7%D9%84%D8%AD%D8%AC%D8%B1%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- ق" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- ق
+https://archive.org/download/20261010_20261010_0045/050%20-%20%D9%82.mp3
+#EXTINF:-1 tvg-name="- الذاريات" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الذاريات
+https://archive.org/download/20261010_20261010_0045/051%20-%20%D8%A7%D9%84%D8%B0%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- الطور" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الطور
+https://archive.org/download/20261010_20261010_0045/052%20-%20%D8%A7%D9%84%D8%B7%D9%88%D8%B1.mp3
+#EXTINF:-1 tvg-name="- النجم" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- النجم
+https://archive.org/download/20261010_20261010_0045/053%20-%20%D8%A7%D9%84%D9%86%D8%AC%D9%85.mp3
+#EXTINF:-1 tvg-name="- القمر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- القمر
+https://archive.org/download/20261010_20261010_0045/054%20-%20%D8%A7%D9%84%D9%82%D9%85%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الرحمن" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الرحمن
+https://archive.org/download/20261010_20261010_0045/055%20-%20%D8%A7%D9%84%D8%B1%D8%AD%D9%85%D9%86.mp3
+#EXTINF:-1 tvg-name="- الواقعة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الواقعة
+https://archive.org/download/20261010_20261010_0045/056%20-%20%D8%A7%D9%84%D9%88%D8%A7%D9%82%D8%B9%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الحديد" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الحديد
+https://archive.org/download/20261010_20261010_0045/057%20-%20%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AF.mp3
+#EXTINF:-1 tvg-name="- المجادلة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- المجادلة
+https://archive.org/download/20261010_20261010_0045/058%20-%20%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D8%AF%D9%84%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الحشر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الحشر
+https://archive.org/download/20261010_20261010_0045/059%20-%20%D8%A7%D9%84%D8%AD%D8%B4%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الممتحنة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الممتحنة
+https://archive.org/download/20261010_20261010_0045/060%20-%20%D8%A7%D9%84%D9%85%D9%85%D8%AA%D8%AD%D9%86%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الصف" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الصف
+https://archive.org/download/20261010_20261010_0045/061%20-%20%D8%A7%D9%84%D8%B5%D9%81.mp3
+#EXTINF:-1 tvg-name="- الجمعة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الجمعة
+https://archive.org/download/20261010_20261010_0045/062%20-%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9.mp3
+#EXTINF:-1 tvg-name="- المنافقون" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- المنافقون
+https://archive.org/download/20261010_20261010_0045/063%20-%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%81%D9%82%D9%88%D9%86.mp3
+#EXTINF:-1 tvg-name="- التغابن" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- التغابن
+https://archive.org/download/20261010_20261010_0045/064%20-%20%D8%A7%D9%84%D8%AA%D8%BA%D8%A7%D8%A8%D9%86.mp3
+#EXTINF:-1 tvg-name="- الطلاق" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الطلاق
+https://archive.org/download/20261010_20261010_0045/065%20-%20%D8%A7%D9%84%D8%B7%D9%84%D8%A7%D9%82.mp3
+#EXTINF:-1 tvg-name="- التحريم" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- التحريم
+https://archive.org/download/20261010_20261010_0045/066%20-%20%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D9%85.mp3
+#EXTINF:-1 tvg-name="- الملك" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الملك
+https://archive.org/download/20261010_20261010_0045/067%20-%20%D8%A7%D9%84%D9%85%D9%84%D9%83.mp3
+#EXTINF:-1 tvg-name="- القلم" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- القلم
+https://archive.org/download/20261010_20261010_0045/068%20-%20%D8%A7%D9%84%D9%82%D9%84%D9%85.mp3
+#EXTINF:-1 tvg-name="- الحاقة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الحاقة
+https://archive.org/download/20261010_20261010_0045/069%20-%20%D8%A7%D9%84%D8%AD%D8%A7%D9%82%D8%A9.mp3
+#EXTINF:-1 tvg-name="- المعارج" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- المعارج
+https://archive.org/download/20261010_20261010_0045/070%20-%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%B1%D8%AC.mp3
+#EXTINF:-1 tvg-name="- نوح" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- نوح
+https://archive.org/download/20261010_20261010_0045/071%20-%20%D9%86%D9%88%D8%AD.mp3
+#EXTINF:-1 tvg-name="- الجن" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الجن
+https://archive.org/download/20261010_20261010_0045/072%20-%20%D8%A7%D9%84%D8%AC%D9%86.mp3
+#EXTINF:-1 tvg-name="- المزمل" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- المزمل
+https://archive.org/download/20261010_20261010_0045/073%20-%20%D8%A7%D9%84%D9%85%D8%B2%D9%85%D9%84.mp3
+#EXTINF:-1 tvg-name="- المدثر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- المدثر
+https://archive.org/download/20261010_20261010_0045/074%20-%20%D8%A7%D9%84%D9%85%D8%AF%D8%AB%D8%B1.mp3
+#EXTINF:-1 tvg-name="- القيامة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- القيامة
+https://archive.org/download/20261010_20261010_0045/075%20-%20%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D9%85%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الإنسان" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الإنسان
+https://archive.org/download/20261010_20261010_0045/076%20-%20%D8%A7%D9%84%D8%A5%D9%86%D8%B3%D8%A7%D9%86.mp3
+#EXTINF:-1 tvg-name="- المرسلات" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- المرسلات
+https://archive.org/download/20261010_20261010_0045/077%20-%20%D8%A7%D9%84%D9%85%D8%B1%D8%B3%D9%84%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- النبأ" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- النبأ
+https://archive.org/download/20261010_20261010_0045/078%20-%20%D8%A7%D9%84%D9%86%D8%A8%D8%A3.mp3
+#EXTINF:-1 tvg-name="- النازعات" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- النازعات
+https://archive.org/download/20261010_20261010_0045/079%20-%20%D8%A7%D9%84%D9%86%D8%A7%D8%B2%D8%B9%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- عبس" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- عبس
+https://archive.org/download/20261010_20261010_0045/080%20-%20%D8%B9%D8%A8%D8%B3.mp3
+#EXTINF:-1 tvg-name="- التكوير" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- التكوير
+https://archive.org/download/20261010_20261010_0045/081%20-%20%D8%A7%D9%84%D8%AA%D9%83%D9%88%D9%8A%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الانفطار" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الانفطار
+https://archive.org/download/20261010_20261010_0045/082%20-%20%D8%A7%D9%84%D8%A7%D9%86%D9%81%D8%B7%D8%A7%D8%B1.mp3
+#EXTINF:-1 tvg-name="- المطففين" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- المطففين
+https://archive.org/download/20261010_20261010_0045/083%20-%20%D8%A7%D9%84%D9%85%D8%B7%D9%81%D9%81%D9%8A%D9%86.mp3
+#EXTINF:-1 tvg-name="- الانشقاق" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الانشقاق
+https://archive.org/download/20261010_20261010_0045/084%20-%20%D8%A7%D9%84%D8%A7%D9%86%D8%B4%D9%82%D8%A7%D9%82.mp3
+#EXTINF:-1 tvg-name="- البروج" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- البروج
+https://archive.org/download/20261010_20261010_0045/085%20-%20%D8%A7%D9%84%D8%A8%D8%B1%D9%88%D8%AC.mp3
+#EXTINF:-1 tvg-name="- الطارق" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الطارق
+https://archive.org/download/20261010_20261010_0045/086%20-%20%D8%A7%D9%84%D8%B7%D8%A7%D8%B1%D9%82.mp3
+#EXTINF:-1 tvg-name="- الأعلى" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الأعلى
+https://archive.org/download/20261010_20261010_0045/087%20-%20%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89.mp3
+#EXTINF:-1 tvg-name="- الغاشية" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الغاشية
+https://archive.org/download/20261010_20261010_0045/088%20-%20%D8%A7%D9%84%D8%BA%D8%A7%D8%B4%D9%8A%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الفجر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الفجر
+https://archive.org/download/20261010_20261010_0045/089%20-%20%D8%A7%D9%84%D9%81%D8%AC%D8%B1.mp3
+#EXTINF:-1 tvg-name="- البلد" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- البلد
+https://archive.org/download/20261010_20261010_0045/090%20-%20%D8%A7%D9%84%D8%A8%D9%84%D8%AF.mp3
+#EXTINF:-1 tvg-name="- الشمس" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الشمس
+https://archive.org/download/20261010_20261010_0045/091%20-%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3.mp3
+#EXTINF:-1 tvg-name="- الليل" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الليل
+https://archive.org/download/20261010_20261010_0045/092%20-%20%D8%A7%D9%84%D9%84%D9%8A%D9%84.mp3
+#EXTINF:-1 tvg-name="- الضحى" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الضحى
+https://archive.org/download/20261010_20261010_0045/093%20-%20%D8%A7%D9%84%D8%B6%D8%AD%D9%89.mp3
+#EXTINF:-1 tvg-name="- الشرح" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الشرح
+https://archive.org/download/20261010_20261010_0045/094%20-%20%D8%A7%D9%84%D8%B4%D8%B1%D8%AD.mp3
+#EXTINF:-1 tvg-name="- التين" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- التين
+https://archive.org/download/20261010_20261010_0045/095%20-%20%D8%A7%D9%84%D8%AA%D9%8A%D9%86.mp3
+#EXTINF:-1 tvg-name="- العلق" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- العلق
+https://archive.org/download/20261010_20261010_0045/096%20-%20%D8%A7%D9%84%D8%B9%D9%84%D9%82.mp3
+#EXTINF:-1 tvg-name="- القدر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- القدر
+https://archive.org/download/20261010_20261010_0045/097%20-%20%D8%A7%D9%84%D9%82%D8%AF%D8%B1.mp3
+#EXTINF:-1 tvg-name="- البينة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- البينة
+https://archive.org/download/20261010_20261010_0045/098%20-%20%D8%A7%D9%84%D8%A8%D9%8A%D9%86%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الزلزلة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الزلزلة
+https://archive.org/download/20261010_20261010_0045/099%20-%20%D8%A7%D9%84%D8%B2%D9%84%D8%B2%D9%84%D8%A9.mp3
+#EXTINF:-1 tvg-name="- العاديات" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- العاديات
+https://archive.org/download/20261010_20261010_0045/100%20-%20%D8%A7%D9%84%D8%B9%D8%A7%D8%AF%D9%8A%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- القارعة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- القارعة
+https://archive.org/download/20261010_20261010_0045/101%20-%20%D8%A7%D9%84%D9%82%D8%A7%D8%B1%D8%B9%D8%A9.mp3
+#EXTINF:-1 tvg-name="- التكاثر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- التكاثر
+https://archive.org/download/20261010_20261010_0045/102%20-%20%D8%A7%D9%84%D8%AA%D9%83%D8%A7%D8%AB%D8%B1.mp3
+#EXTINF:-1 tvg-name="- العصر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- العصر
+https://archive.org/download/20261010_20261010_0045/103%20-%20%D8%A7%D9%84%D8%B9%D8%B5%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الهمزة" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الهمزة
+https://archive.org/download/20261010_20261010_0045/104%20-%20%D8%A7%D9%84%D9%87%D9%85%D8%B2%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الفيل" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الفيل
+https://archive.org/download/20261010_20261010_0045/105%20-%20%D8%A7%D9%84%D9%81%D9%8A%D9%84.mp3
+#EXTINF:-1 tvg-name="- قريش" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- قريش
+https://archive.org/download/20261010_20261010_0045/106%20-%20%D9%82%D8%B1%D9%8A%D8%B4.mp3
+#EXTINF:-1 tvg-name="- الماعون" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الماعون
+https://archive.org/download/20261010_20261010_0045/107%20-%20%D8%A7%D9%84%D9%85%D8%A7%D8%B9%D9%88%D9%86.mp3
+#EXTINF:-1 tvg-name="- الكوثر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الكوثر
+https://archive.org/download/20261010_20261010_0045/108%20-%20%D8%A7%D9%84%D9%83%D9%88%D8%AB%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الكافرون" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الكافرون
+https://archive.org/download/20261010_20261010_0045/109%20-%20%D8%A7%D9%84%D9%83%D8%A7%D9%81%D8%B1%D9%88%D9%86.mp3
+#EXTINF:-1 tvg-name="- النصر" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- النصر
+https://archive.org/download/20261010_20261010_0045/110%20-%20%D8%A7%D9%84%D9%86%D8%B5%D8%B1.mp3
+#EXTINF:-1 tvg-name="- المسد" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- المسد
+https://archive.org/download/20261010_20261010_0045/111%20-%20%D8%A7%D9%84%D9%85%D8%B3%D8%AF.mp3
+#EXTINF:-1 tvg-name="- الإخلاص" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الإخلاص
+https://archive.org/download/20261010_20261010_0045/112%20-%20%D8%A7%D9%84%D8%A5%D8%AE%D9%84%D8%A7%D8%B5.mp3
+#EXTINF:-1 tvg-name="- الفلق" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الفلق
+https://archive.org/download/20261010_20261010_0045/113%20-%20%D8%A7%D9%84%D9%81%D9%84%D9%82.mp3
+#EXTINF:-1 tvg-name="- الناس" tvg-logo="https://archive.org/services/img/20261010_20261010_0045" group-title="مصحف الشيخ علي الحذيفي برواية قالون",- الناس
+https://archive.org/download/20261010_20261010_0045/114%20-%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3.mp3
+#EXTINF:-1 tvg-name="- الفاتحة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الفاتحة
+https://archive.org/download/20261009_20261009_2349/001%20-%20%D8%A7%D9%84%D9%81%D8%A7%D8%AA%D8%AD%D8%A9.mp3
+#EXTINF:-1 tvg-name="- البقرة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- البقرة
+https://archive.org/download/20261009_20261009_2349/002%20-%20%D8%A7%D9%84%D8%A8%D9%82%D8%B1%D8%A9.mp3
+#EXTINF:-1 tvg-name="- آل عمران" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- آل عمران
+https://archive.org/download/20261009_20261009_2349/003%20-%20%D8%A2%D9%84%20%D8%B9%D9%85%D8%B1%D8%A7%D9%86.mp3
+#EXTINF:-1 tvg-name="- النساء" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- النساء
+https://archive.org/download/20261009_20261009_2349/004%20-%20%D8%A7%D9%84%D9%86%D8%B3%D8%A7%D8%A1.mp3
+#EXTINF:-1 tvg-name="- المائدة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- المائدة
+https://archive.org/download/20261009_20261009_2349/005%20-%20%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D8%AF%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الأنعام" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الأنعام
+https://archive.org/download/20261009_20261009_2349/006%20-%20%D8%A7%D9%84%D8%A3%D9%86%D8%B9%D8%A7%D9%85.mp3
+#EXTINF:-1 tvg-name="- الأعراف" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الأعراف
+https://archive.org/download/20261009_20261009_2349/007%20-%20%D8%A7%D9%84%D8%A3%D8%B9%D8%B1%D8%A7%D9%81.mp3
+#EXTINF:-1 tvg-name="- الأنفال" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الأنفال
+https://archive.org/download/20261009_20261009_2349/008%20-%20%D8%A7%D9%84%D8%A3%D9%86%D9%81%D8%A7%D9%84.mp3
+#EXTINF:-1 tvg-name="- التوبة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- التوبة
+https://archive.org/download/20261009_20261009_2349/009%20-%20%D8%A7%D9%84%D8%AA%D9%88%D8%A8%D8%A9.mp3
+#EXTINF:-1 tvg-name="- يونس" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- يونس
+https://archive.org/download/20261009_20261009_2349/010%20-%20%D9%8A%D9%88%D9%86%D8%B3.mp3
+#EXTINF:-1 tvg-name="- هود" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- هود
+https://archive.org/download/20261009_20261009_2349/011%20-%20%D9%87%D9%88%D8%AF.mp3
+#EXTINF:-1 tvg-name="- يوسف" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- يوسف
+https://archive.org/download/20261009_20261009_2349/012%20-%20%D9%8A%D9%88%D8%B3%D9%81.mp3
+#EXTINF:-1 tvg-name="- الرعد" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الرعد
+https://archive.org/download/20261009_20261009_2349/013%20-%20%D8%A7%D9%84%D8%B1%D8%B9%D8%AF.mp3
+#EXTINF:-1 tvg-name="- إبراهيم" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- إبراهيم
+https://archive.org/download/20261009_20261009_2349/014%20-%20%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85.mp3
+#EXTINF:-1 tvg-name="- الحجر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الحجر
+https://archive.org/download/20261009_20261009_2349/015%20-%20%D8%A7%D9%84%D8%AD%D8%AC%D8%B1.mp3
+#EXTINF:-1 tvg-name="- النحل" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- النحل
+https://archive.org/download/20261009_20261009_2349/016%20-%20%D8%A7%D9%84%D9%86%D8%AD%D9%84.mp3
+#EXTINF:-1 tvg-name="- الإسراء" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الإسراء
+https://archive.org/download/20261009_20261009_2349/017%20-%20%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A1.mp3
+#EXTINF:-1 tvg-name="- الكهف" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الكهف
+https://archive.org/download/20261009_20261009_2349/018%20-%20%D8%A7%D9%84%D9%83%D9%87%D9%81.mp3
+#EXTINF:-1 tvg-name="- مريم" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- مريم
+https://archive.org/download/20261009_20261009_2349/019%20-%20%D9%85%D8%B1%D9%8A%D9%85.mp3
+#EXTINF:-1 tvg-name="- طه" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- طه
+https://archive.org/download/20261009_20261009_2349/020%20-%20%D8%B7%D9%87.mp3
+#EXTINF:-1 tvg-name="- الأنبياء" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الأنبياء
+https://archive.org/download/20261009_20261009_2349/021%20-%20%D8%A7%D9%84%D8%A3%D9%86%D8%A8%D9%8A%D8%A7%D8%A1.mp3
+#EXTINF:-1 tvg-name="- الحج" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الحج
+https://archive.org/download/20261009_20261009_2349/022%20-%20%D8%A7%D9%84%D8%AD%D8%AC.mp3
+#EXTINF:-1 tvg-name="- المؤمنون" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- المؤمنون
+https://archive.org/download/20261009_20261009_2349/023%20-%20%D8%A7%D9%84%D9%85%D8%A4%D9%85%D9%86%D9%88%D9%86.mp3
+#EXTINF:-1 tvg-name="- النور" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- النور
+https://archive.org/download/20261009_20261009_2349/024%20-%20%D8%A7%D9%84%D9%86%D9%88%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الفرقان" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الفرقان
+https://archive.org/download/20261009_20261009_2349/025%20-%20%D8%A7%D9%84%D9%81%D8%B1%D9%82%D8%A7%D9%86.mp3
+#EXTINF:-1 tvg-name="- الشعراء" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الشعراء
+https://archive.org/download/20261009_20261009_2349/026%20-%20%D8%A7%D9%84%D8%B4%D8%B9%D8%B1%D8%A7%D8%A1.mp3
+#EXTINF:-1 tvg-name="- النمل" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- النمل
+https://archive.org/download/20261009_20261009_2349/027%20-%20%D8%A7%D9%84%D9%86%D9%85%D9%84.mp3
+#EXTINF:-1 tvg-name="- القصص" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- القصص
+https://archive.org/download/20261009_20261009_2349/028%20-%20%D8%A7%D9%84%D9%82%D8%B5%D8%B5.mp3
+#EXTINF:-1 tvg-name="- العنكبوت" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- العنكبوت
+https://archive.org/download/20261009_20261009_2349/029%20-%20%D8%A7%D9%84%D8%B9%D9%86%D9%83%D8%A8%D9%88%D8%AA.mp3
+#EXTINF:-1 tvg-name="- الروم" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الروم
+https://archive.org/download/20261009_20261009_2349/030%20-%20%D8%A7%D9%84%D8%B1%D9%88%D9%85.mp3
+#EXTINF:-1 tvg-name="- لقمان" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- لقمان
+https://archive.org/download/20261009_20261009_2349/031%20-%20%D9%84%D9%82%D9%85%D8%A7%D9%86.mp3
+#EXTINF:-1 tvg-name="- السجدة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- السجدة
+https://archive.org/download/20261009_20261009_2349/032%20-%20%D8%A7%D9%84%D8%B3%D8%AC%D8%AF%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الأحزاب" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الأحزاب
+https://archive.org/download/20261009_20261009_2349/033%20-%20%D8%A7%D9%84%D8%A3%D8%AD%D8%B2%D8%A7%D8%A8.mp3
+#EXTINF:-1 tvg-name="- سبأ" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- سبأ
+https://archive.org/download/20261009_20261009_2349/034%20-%20%D8%B3%D8%A8%D8%A3.mp3
+#EXTINF:-1 tvg-name="- فاطر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- فاطر
+https://archive.org/download/20261009_20261009_2349/035%20-%20%D9%81%D8%A7%D8%B7%D8%B1.mp3
+#EXTINF:-1 tvg-name="- يس" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- يس
+https://archive.org/download/20261009_20261009_2349/036%20-%20%D9%8A%D8%B3.mp3
+#EXTINF:-1 tvg-name="- الصافات" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الصافات
+https://archive.org/download/20261009_20261009_2349/037%20-%20%D8%A7%D9%84%D8%B5%D8%A7%D9%81%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- ص" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- ص
+https://archive.org/download/20261009_20261009_2349/038%20-%20%D8%B5.mp3
+#EXTINF:-1 tvg-name="- الزمر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الزمر
+https://archive.org/download/20261009_20261009_2349/039%20-%20%D8%A7%D9%84%D8%B2%D9%85%D8%B1.mp3
+#EXTINF:-1 tvg-name="- غافر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- غافر
+https://archive.org/download/20261009_20261009_2349/040%20-%20%D8%BA%D8%A7%D9%81%D8%B1.mp3
+#EXTINF:-1 tvg-name="- فصلت" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- فصلت
+https://archive.org/download/20261009_20261009_2349/041%20-%20%D9%81%D8%B5%D9%84%D8%AA.mp3
+#EXTINF:-1 tvg-name="- الشورى" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الشورى
+https://archive.org/download/20261009_20261009_2349/042%20-%20%D8%A7%D9%84%D8%B4%D9%88%D8%B1%D9%89.mp3
+#EXTINF:-1 tvg-name="- الزخرف" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الزخرف
+https://archive.org/download/20261009_20261009_2349/043%20-%20%D8%A7%D9%84%D8%B2%D8%AE%D8%B1%D9%81.mp3
+#EXTINF:-1 tvg-name="- الدخان" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الدخان
+https://archive.org/download/20261009_20261009_2349/044%20-%20%D8%A7%D9%84%D8%AF%D8%AE%D8%A7%D9%86.mp3
+#EXTINF:-1 tvg-name="- الجاثية" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الجاثية
+https://archive.org/download/20261009_20261009_2349/045%20-%20%D8%A7%D9%84%D8%AC%D8%A7%D8%AB%D9%8A%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الأحقاف" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الأحقاف
+https://archive.org/download/20261009_20261009_2349/046%20-%20%D8%A7%D9%84%D8%A3%D8%AD%D9%82%D8%A7%D9%81.mp3
+#EXTINF:-1 tvg-name="- محمد" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- محمد
+https://archive.org/download/20261009_20261009_2349/047%20-%20%D9%85%D8%AD%D9%85%D8%AF.mp3
+#EXTINF:-1 tvg-name="- الفتح" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الفتح
+https://archive.org/download/20261009_20261009_2349/048%20-%20%D8%A7%D9%84%D9%81%D8%AA%D8%AD.mp3
+#EXTINF:-1 tvg-name="- الحجرات" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الحجرات
+https://archive.org/download/20261009_20261009_2349/049%20-%20%D8%A7%D9%84%D8%AD%D8%AC%D8%B1%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- ق" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- ق
+https://archive.org/download/20261009_20261009_2349/050%20-%20%D9%82.mp3
+#EXTINF:-1 tvg-name="- الذاريات" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الذاريات
+https://archive.org/download/20261009_20261009_2349/051%20-%20%D8%A7%D9%84%D8%B0%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- الطور" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الطور
+https://archive.org/download/20261009_20261009_2349/052%20-%20%D8%A7%D9%84%D8%B7%D9%88%D8%B1.mp3
+#EXTINF:-1 tvg-name="- النجم" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- النجم
+https://archive.org/download/20261009_20261009_2349/053%20-%20%D8%A7%D9%84%D9%86%D8%AC%D9%85.mp3
+#EXTINF:-1 tvg-name="- القمر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- القمر
+https://archive.org/download/20261009_20261009_2349/054%20-%20%D8%A7%D9%84%D9%82%D9%85%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الرحمن" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الرحمن
+https://archive.org/download/20261009_20261009_2349/055%20-%20%D8%A7%D9%84%D8%B1%D8%AD%D9%85%D9%86.mp3
+#EXTINF:-1 tvg-name="- الواقعة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الواقعة
+https://archive.org/download/20261009_20261009_2349/056%20-%20%D8%A7%D9%84%D9%88%D8%A7%D9%82%D8%B9%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الحديد" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الحديد
+https://archive.org/download/20261009_20261009_2349/057%20-%20%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AF.mp3
+#EXTINF:-1 tvg-name="- المجادلة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- المجادلة
+https://archive.org/download/20261009_20261009_2349/058%20-%20%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D8%AF%D9%84%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الحشر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الحشر
+https://archive.org/download/20261009_20261009_2349/059%20-%20%D8%A7%D9%84%D8%AD%D8%B4%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الممتحنة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الممتحنة
+https://archive.org/download/20261009_20261009_2349/060%20-%20%D8%A7%D9%84%D9%85%D9%85%D8%AA%D8%AD%D9%86%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الصف" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الصف
+https://archive.org/download/20261009_20261009_2349/061%20-%20%D8%A7%D9%84%D8%B5%D9%81.mp3
+#EXTINF:-1 tvg-name="- الجمعة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الجمعة
+https://archive.org/download/20261009_20261009_2349/062%20-%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D8%A9.mp3
+#EXTINF:-1 tvg-name="- المنافقون" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- المنافقون
+https://archive.org/download/20261009_20261009_2349/063%20-%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%81%D9%82%D9%88%D9%86.mp3
+#EXTINF:-1 tvg-name="- التغابن" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- التغابن
+https://archive.org/download/20261009_20261009_2349/064%20-%20%D8%A7%D9%84%D8%AA%D8%BA%D8%A7%D8%A8%D9%86.mp3
+#EXTINF:-1 tvg-name="- الطلاق" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الطلاق
+https://archive.org/download/20261009_20261009_2349/065%20-%20%D8%A7%D9%84%D8%B7%D9%84%D8%A7%D9%82.mp3
+#EXTINF:-1 tvg-name="- التحريم" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- التحريم
+https://archive.org/download/20261009_20261009_2349/066%20-%20%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D9%85.mp3
+#EXTINF:-1 tvg-name="- الملك" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الملك
+https://archive.org/download/20261009_20261009_2349/067%20-%20%D8%A7%D9%84%D9%85%D9%84%D9%83.mp3
+#EXTINF:-1 tvg-name="- القلم" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- القلم
+https://archive.org/download/20261009_20261009_2349/068%20-%20%D8%A7%D9%84%D9%82%D9%84%D9%85.mp3
+#EXTINF:-1 tvg-name="- الحاقة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الحاقة
+https://archive.org/download/20261009_20261009_2349/069%20-%20%D8%A7%D9%84%D8%AD%D8%A7%D9%82%D8%A9.mp3
+#EXTINF:-1 tvg-name="- المعارج" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- المعارج
+https://archive.org/download/20261009_20261009_2349/070%20-%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%B1%D8%AC.mp3
+#EXTINF:-1 tvg-name="- نوح" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- نوح
+https://archive.org/download/20261009_20261009_2349/071%20-%20%D9%86%D9%88%D8%AD.mp3
+#EXTINF:-1 tvg-name="- الجن" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الجن
+https://archive.org/download/20261009_20261009_2349/072%20-%20%D8%A7%D9%84%D8%AC%D9%86.mp3
+#EXTINF:-1 tvg-name="- المزمل" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- المزمل
+https://archive.org/download/20261009_20261009_2349/073%20-%20%D8%A7%D9%84%D9%85%D8%B2%D9%85%D9%84.mp3
+#EXTINF:-1 tvg-name="- المدثر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- المدثر
+https://archive.org/download/20261009_20261009_2349/074%20-%20%D8%A7%D9%84%D9%85%D8%AF%D8%AB%D8%B1.mp3
+#EXTINF:-1 tvg-name="- القيامة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- القيامة
+https://archive.org/download/20261009_20261009_2349/075%20-%20%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D9%85%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الإنسان" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الإنسان
+https://archive.org/download/20261009_20261009_2349/076%20-%20%D8%A7%D9%84%D8%A5%D9%86%D8%B3%D8%A7%D9%86.mp3
+#EXTINF:-1 tvg-name="- المرسلات" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- المرسلات
+https://archive.org/download/20261009_20261009_2349/077%20-%20%D8%A7%D9%84%D9%85%D8%B1%D8%B3%D9%84%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- النبأ" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- النبأ
+https://archive.org/download/20261009_20261009_2349/078%20-%20%D8%A7%D9%84%D9%86%D8%A8%D8%A3.mp3
+#EXTINF:-1 tvg-name="- النازعات" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- النازعات
+https://archive.org/download/20261009_20261009_2349/079%20-%20%D8%A7%D9%84%D9%86%D8%A7%D8%B2%D8%B9%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- عبس" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- عبس
+https://archive.org/download/20261009_20261009_2349/080%20-%20%D8%B9%D8%A8%D8%B3.mp3
+#EXTINF:-1 tvg-name="- التكوير" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- التكوير
+https://archive.org/download/20261009_20261009_2349/081%20-%20%D8%A7%D9%84%D8%AA%D9%83%D9%88%D9%8A%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الانفطار" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الانفطار
+https://archive.org/download/20261009_20261009_2349/082%20-%20%D8%A7%D9%84%D8%A7%D9%86%D9%81%D8%B7%D8%A7%D8%B1.mp3
+#EXTINF:-1 tvg-name="- المطففين" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- المطففين
+https://archive.org/download/20261009_20261009_2349/083%20-%20%D8%A7%D9%84%D9%85%D8%B7%D9%81%D9%81%D9%8A%D9%86.mp3
+#EXTINF:-1 tvg-name="- الانشقاق" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الانشقاق
+https://archive.org/download/20261009_20261009_2349/084%20-%20%D8%A7%D9%84%D8%A7%D9%86%D8%B4%D9%82%D8%A7%D9%82.mp3
+#EXTINF:-1 tvg-name="- البروج" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- البروج
+https://archive.org/download/20261009_20261009_2349/085%20-%20%D8%A7%D9%84%D8%A8%D8%B1%D9%88%D8%AC.mp3
+#EXTINF:-1 tvg-name="- الطارق" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الطارق
+https://archive.org/download/20261009_20261009_2349/086%20-%20%D8%A7%D9%84%D8%B7%D8%A7%D8%B1%D9%82.mp3
+#EXTINF:-1 tvg-name="- الأعلى" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الأعلى
+https://archive.org/download/20261009_20261009_2349/087%20-%20%D8%A7%D9%84%D8%A3%D8%B9%D9%84%D9%89.mp3
+#EXTINF:-1 tvg-name="- الغاشية" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الغاشية
+https://archive.org/download/20261009_20261009_2349/088%20-%20%D8%A7%D9%84%D8%BA%D8%A7%D8%B4%D9%8A%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الفجر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الفجر
+https://archive.org/download/20261009_20261009_2349/089%20-%20%D8%A7%D9%84%D9%81%D8%AC%D8%B1.mp3
+#EXTINF:-1 tvg-name="- البلد" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- البلد
+https://archive.org/download/20261009_20261009_2349/090%20-%20%D8%A7%D9%84%D8%A8%D9%84%D8%AF.mp3
+#EXTINF:-1 tvg-name="- الشمس" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الشمس
+https://archive.org/download/20261009_20261009_2349/091%20-%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3.mp3
+#EXTINF:-1 tvg-name="- الليل" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الليل
+https://archive.org/download/20261009_20261009_2349/092%20-%20%D8%A7%D9%84%D9%84%D9%8A%D9%84.mp3
+#EXTINF:-1 tvg-name="- الضحى" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الضحى
+https://archive.org/download/20261009_20261009_2349/093%20-%20%D8%A7%D9%84%D8%B6%D8%AD%D9%89.mp3
+#EXTINF:-1 tvg-name="- الشرح" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الشرح
+https://archive.org/download/20261009_20261009_2349/094%20-%20%D8%A7%D9%84%D8%B4%D8%B1%D8%AD.mp3
+#EXTINF:-1 tvg-name="- التين" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- التين
+https://archive.org/download/20261009_20261009_2349/095%20-%20%D8%A7%D9%84%D8%AA%D9%8A%D9%86.mp3
+#EXTINF:-1 tvg-name="- العلق" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- العلق
+https://archive.org/download/20261009_20261009_2349/096%20-%20%D8%A7%D9%84%D8%B9%D9%84%D9%82.mp3
+#EXTINF:-1 tvg-name="- القدر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- القدر
+https://archive.org/download/20261009_20261009_2349/097%20-%20%D8%A7%D9%84%D9%82%D8%AF%D8%B1.mp3
+#EXTINF:-1 tvg-name="- البينة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- البينة
+https://archive.org/download/20261009_20261009_2349/098%20-%20%D8%A7%D9%84%D8%A8%D9%8A%D9%86%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الزلزلة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الزلزلة
+https://archive.org/download/20261009_20261009_2349/099%20-%20%D8%A7%D9%84%D8%B2%D9%84%D8%B2%D9%84%D8%A9.mp3
+#EXTINF:-1 tvg-name="- العاديات" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- العاديات
+https://archive.org/download/20261009_20261009_2349/100%20-%20%D8%A7%D9%84%D8%B9%D8%A7%D8%AF%D9%8A%D8%A7%D8%AA.mp3
+#EXTINF:-1 tvg-name="- القارعة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- القارعة
+https://archive.org/download/20261009_20261009_2349/101%20-%20%D8%A7%D9%84%D9%82%D8%A7%D8%B1%D8%B9%D8%A9.mp3
+#EXTINF:-1 tvg-name="- التكاثر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- التكاثر
+https://archive.org/download/20261009_20261009_2349/102%20-%20%D8%A7%D9%84%D8%AA%D9%83%D8%A7%D8%AB%D8%B1.mp3
+#EXTINF:-1 tvg-name="- العصر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- العصر
+https://archive.org/download/20261009_20261009_2349/103%20-%20%D8%A7%D9%84%D8%B9%D8%B5%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الهمزة" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الهمزة
+https://archive.org/download/20261009_20261009_2349/104%20-%20%D8%A7%D9%84%D9%87%D9%85%D8%B2%D8%A9.mp3
+#EXTINF:-1 tvg-name="- الفيل" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الفيل
+https://archive.org/download/20261009_20261009_2349/105%20-%20%D8%A7%D9%84%D9%81%D9%8A%D9%84.mp3
+#EXTINF:-1 tvg-name="- قريش" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- قريش
+https://archive.org/download/20261009_20261009_2349/106%20-%20%D9%82%D8%B1%D9%8A%D8%B4.mp3
+#EXTINF:-1 tvg-name="- الماعون" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الماعون
+https://archive.org/download/20261009_20261009_2349/107%20-%20%D8%A7%D9%84%D9%85%D8%A7%D8%B9%D9%88%D9%86.mp3
+#EXTINF:-1 tvg-name="- الكوثر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الكوثر
+https://archive.org/download/20261009_20261009_2349/108%20-%20%D8%A7%D9%84%D9%83%D9%88%D8%AB%D8%B1.mp3
+#EXTINF:-1 tvg-name="- الكافرون" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الكافرون
+https://archive.org/download/20261009_20261009_2349/109%20-%20%D8%A7%D9%84%D9%83%D8%A7%D9%81%D8%B1%D9%88%D9%86.mp3
+#EXTINF:-1 tvg-name="- النصر" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- النصر
+https://archive.org/download/20261009_20261009_2349/110%20-%20%D8%A7%D9%84%D9%86%D8%B5%D8%B1.mp3
+#EXTINF:-1 tvg-name="- المسد" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- المسد
+https://archive.org/download/20261009_20261009_2349/111%20-%20%D8%A7%D9%84%D9%85%D8%B3%D8%AF.mp3
+#EXTINF:-1 tvg-name="- الإخلاص" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الإخلاص
+https://archive.org/download/20261009_20261009_2349/112%20-%20%D8%A7%D9%84%D8%A5%D8%AE%D9%84%D8%A7%D8%B5.mp3
+#EXTINF:-1 tvg-name="- الفلق" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الفلق
+https://archive.org/download/20261009_20261009_2349/113%20-%20%D8%A7%D9%84%D9%81%D9%84%D9%82.mp3
+#EXTINF:-1 tvg-name="- الناس" tvg-logo="https://archive.org/services/img/20261009_20261009_2349" group-title="الشيخ عبد الرحمن بنموسى برواية ورش",- الناس
+https://archive.org/download/20261009_20261009_2349/114%20-%20%D8%A7%D9%84%D9%86%D8%A7%D8%B3.mp3
 #EXTINF:-1 tvg-name="سورة إبراهيم" tvg-logo="https://archive.org/services/img/20261008_20261008_2256" group-title="مرئيات الشيخ عبد الباسط عبد الصمد",سورة إبراهيم
 https://archive.org/download/20261008_20261008_2256/01%D8%B3%D9%88%D8%B1%D8%A9%20%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85%20%281%29.TS
 #EXTINF:-1 tvg-name="سورة إبراهيم" tvg-logo="https://archive.org/services/img/20261008_20261008_2256" group-title="مرئيات الشيخ عبد الباسط عبد الصمد",سورة إبراهيم
@@ -84,7 +522,7 @@ https://archive.org/download/20261008_20261008_2256/02%D8%B3%D9%88%D8%B1%D8%A9%2
 #EXTINF:-1 tvg-name="سورة الأعراف" tvg-logo="https://archive.org/services/img/20261008_20261008_2256" group-title="مرئيات الشيخ عبد الباسط عبد الصمد",سورة الأعراف
 https://archive.org/download/20261008_20261008_2256/03%D8%B3%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B9%D8%B1%D8%A7%D9%81%20%281%29.TS
 #EXTINF:-1 tvg-name="سورة الأعراف" tvg-logo="https://archive.org/services/img/20261008_20261008_2256" group-title="مرئيات الشيخ عبد الباسط عبد الصمد",سورة الأعراف
-https://archive.org/download/20261008_20261008_2256/04%D8%B3%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B9%D8%B1%D8%A7%D9%81%20%282%29.TS
+https://archive.org/download/20261008_20261008_2256/04%D8%B3%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B9%D8%B1%D8%A7%D9%81%20%282%29.mp4
 #EXTINF:-1 tvg-name="سورة هود" tvg-logo="https://archive.org/services/img/20261008_20261008_2256" group-title="مرئيات الشيخ عبد الباسط عبد الصمد",سورة هود
 https://archive.org/download/20261008_20261008_2256/05%D8%B3%D9%88%D8%B1%D8%A9%20%D9%87%D9%88%D8%AF%20%281%29.TS
 #EXTINF:-1 tvg-name="سورة هود" tvg-logo="https://archive.org/services/img/20261008_20261008_2256" group-title="مرئيات الشيخ عبد الباسط عبد الصمد",سورة هود
@@ -1235,6 +1673,12 @@ https://archive.org/download/20261004_20261004_0526/AR-%D9%85%D8%B3%D8%B1%D8%AD-
 https://archive.org/download/20261004_20261004_0526/AR-%D9%85%D8%B3%D8%B1%D8%AD-1985-%D8%A7%D9%84%D9%88%D8%A7%D8%AF%20%D8%B3%D9%8A%D8%AF%20%D8%A7%D9%84%D8%B4%D8%BA%D8%A7%D9%84%20-%20%D8%B9%D8%A7%D8%AF%D9%84%20%D8%A5%D9%85%D8%A7%D9%85.mkv
 #EXTINF:-1 tvg-name="AR-مسرح-1993-الزعيم - عادل إمام" tvg-logo="https://archive.org/services/img/20261004_20261004_0526" group-title="أفلام ومسرحيات عادل إمام",AR-مسرح-1993-الزعيم - عادل إمام
 https://archive.org/download/20261004_20261004_0526/AR-%D9%85%D8%B3%D8%B1%D8%AD-1993-%D8%A7%D9%84%D8%B2%D8%B9%D9%8A%D9%85%20-%20%D8%B9%D8%A7%D8%AF%D9%84%20%D8%A5%D9%85%D8%A7%D9%85.mkv
+#EXTINF:-1 tvg-name="الفتوحات المكية - الشيخ الأكبر محيى الدين ابن عربى" tvg-logo="https://archive.org/services/img/20261003_20261003_0514" group-title="التصوف العرفاني",الفتوحات المكية - الشيخ الأكبر محيى الدين ابن عربى
+https://archive.org/download/20261003_20261003_0514/%D8%A7%D9%84%D9%81%D8%AA%D9%88%D8%AD%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D9%83%D9%8A%D8%A9%20-%20%D8%A7%D9%84%D8%B4%D9%8A%D8%AE%20%D8%A7%D9%84%D8%A3%D9%83%D8%A8%D8%B1%20%D9%85%D8%AD%D9%8A%D9%89%20%D8%A7%D9%84%D8%AF%D9%8A%D9%86%20%D8%A7%D8%A8%D9%86%20%D8%B9%D8%B1%D8%A8%D9%89.mp4
+#EXTINF:-1 tvg-name="د يوسف زيدان كتاب الفتوحات المكية لابن عربي" tvg-logo="https://archive.org/services/img/20261003_20261003_0514" group-title="التصوف العرفاني",د يوسف زيدان كتاب الفتوحات المكية لابن عربي
+https://archive.org/download/20261003_20261003_0514/%D8%AF%20%D9%8A%D9%88%D8%B3%D9%81%20%D8%B2%D9%8A%D8%AF%D8%A7%D9%86%20%D9%83%D8%AA%D8%A7%D8%A8%20%D8%A7%D9%84%D9%81%D8%AA%D9%88%D8%AD%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D9%83%D9%8A%D8%A9%20%D9%84%D8%A7%D8%A8%D9%86%20%D8%B9%D8%B1%D8%A8%D9%8A.mp4
+#EXTINF:-1 tvg-name="نجاح الطائي ابن عربي المالكي وابن عربي الفتوحات المكية ناصبي ومؤمن 30 أكتوبر" tvg-logo="https://archive.org/services/img/20261003_20261003_0514" group-title="التصوف العرفاني",نجاح الطائي ابن عربي المالكي وابن عربي الفتوحات المكية ناصبي ومؤمن 30 أكتوبر
+https://archive.org/download/20261003_20261003_0514/%D9%86%D8%AC%D8%A7%D8%AD%20%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D9%8A%20%D8%A7%D8%A8%D9%86%20%D8%B9%D8%B1%D8%A8%D9%8A%20%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%83%D9%8A%20%D9%88%D8%A7%D8%A8%D9%86%20%D8%B9%D8%B1%D8%A8%D9%8A%20%D8%A7%D9%84%D9%81%D8%AA%D9%88%D8%AD%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D9%83%D9%8A%D8%A9%20%20%D9%86%D8%A7%D8%B5%D8%A8%D9%8A%20%D9%88%D9%85%D8%A4%D9%85%D9%86%20%2030%20%D8%A3%D9%83%D8%AA%D9%88%D8%A8%D8%B1%202023.ia.mp4
 #EXTINF:-1 tvg-name="فاس الحلقة الأولى" tvg-logo="https://archive.org/services/img/20261003_20261003_0151" group-title="ذاكرة المدن - تاريخ مدينة فاس وسلا ومكناس والرباط ومراكش",فاس الحلقة الأولى
 https://archive.org/download/20261003_20261003_0151/001-%D9%81%D8%A7%D8%B3%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%20%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%89.mp4
 #EXTINF:-1 tvg-name="فاس الحلقة الثانية" tvg-logo="https://archive.org/services/img/20261003_20261003_0151" group-title="ذاكرة المدن - تاريخ مدينة فاس وسلا ومكناس والرباط ومراكش",فاس الحلقة الثانية
