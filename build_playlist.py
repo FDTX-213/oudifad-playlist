@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build full M3U playlist from Archive.org account (videos + audio)."""
+"""Build full M3U playlist from Archive.org account (videos + audio) - includes ALL media files."""
 
 import json
 import re
@@ -10,18 +10,25 @@ import time
 UPLOADER = "ouadoudifouad334@gmail.com"
 OUTPUT = "playlist.m3u"
 
-# الصيغ المدعومة
-VIDEO_EXTS = (".mp4", ".mkv", ".webm", ".avi", ".mov", ".m4v", ".ts", ".flv")
-AUDIO_EXTS = (".mp3", ".m4a", ".ogg", ".flac", ".wav", ".aac", ".opus")
+# كل الصيغ المدعومة (يمكنك إضافة المزيد بسهولة)
+VIDEO_EXTS = (
+    ".mp4", ".mkv", ".webm", ".avi", ".mov", ".m4v", ".ts", ".flv",
+    ".wmv", ".mpg", ".mpeg", ".m2ts", ".vob", ".3gp", ".ogv", ".ia.mp4"
+)
+AUDIO_EXTS = (
+    ".mp3", ".m4a", ".ogg", ".flac", ".wav", ".aac", ".opus",
+    ".wma", ".aiff", ".ape", ".alac", ".ac3", ".dts"
+)
 
 def clean_name(filename):
-    # إزالة الامتداد
-    name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
-    # إزالة الأرقام في البداية
+    name = re.sub(
+        r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|wmv|mpg|mpeg|m2ts|vob|3gp|ogv|ia\.mp4|"
+        r"mp3|m4a|ogg|flac|wav|aac|opus|wma|aiff|ape|alac|ac3|dts)$",
+        "", filename, flags=re.I
+    )
     name = re.sub(r"^\d+[\.\-]?\s*", "", name)
     name = re.sub(r"^HE-\d+-", "", name)
     name = re.sub(r"^\d{4,}-", "", name)
-    # إزالة الجودات
     name = re.sub(r"\s*\d{3,4}p\b", "", name, flags=re.I)
     name = re.sub(r"\s*(WEB-?DL|BluRay|BRRip|HDRip|x264|h264|AAC|HEVC)\b", "", name, flags=re.I)
     name = re.sub(r"\s*\(\d+\)\s*$", "", name)
@@ -32,70 +39,74 @@ def clean_name(filename):
     return name or filename
 
 def get_files(meta):
-    """استخراج الملفات المناسبة مع تفضيل النسخ الأصلية"""
+    """إرجاع كل ملفات الفيديو والصوت بدون أي استبعاد أو تفضيل"""
     files = meta.get("files", [])
-    candidates = {}
+    result = []
 
     for f in files:
         name = f.get("name", "")
         lower = name.lower()
 
-        # تجاهل الصور والمجلدات والملفات الصغيرة
-        if any(x in lower for x in ["thumb", ".jpg", ".png", ".gif", ".xml", ".json", ".txt", ".srt", ".vtt"]):
+        # تجاهل فقط الصور والثمبنيلز وملفات الميتاداتا والترجمة
+        if any(x in lower for x in [
+            "thumb", ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp",
+            ".xml", ".json", ".txt", ".nfo", ".srt", ".vtt", ".ass", ".ssa",
+            ".zip", ".rar", ".7z", ".torrent", ".md5", ".sfv"
+        ]):
             continue
-        if "/thumbs/" in lower:
+        if "/thumbs/" in lower or lower.endswith("/"):
             continue
 
-        # تحديد إذا كان فيديو أو صوت
-        is_video = any(lower.endswith(ext) for ext in VIDEO_EXTS) or lower.endswith(".ia.mp4")
+        is_video = any(lower.endswith(ext) for ext in VIDEO_EXTS)
         is_audio = any(lower.endswith(ext) for ext in AUDIO_EXTS)
 
-        if not (is_video or is_audio):
-            continue
+        if is_video or is_audio:
+            result.append(f)
 
-        # مفتاح بدون امتداد للمقارنة
-        base = re.sub(r"(\.ia)?\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus)$", "", name, flags=re.I)
-
-        # تفضيل الملف الأصلي على .ia.mp4
-        if base in candidates:
-            existing = candidates[base]["name"]
-            # إذا الحالي أصلي والقديم ia → استبدل
-            if existing.endswith(".ia.mp4") and not name.endswith(".ia.mp4"):
-                candidates[base] = f
-            # إذا كلاهما أصلي، خذ الأكبر حجمًا
-            elif not name.endswith(".ia.mp4") and not existing.endswith(".ia.mp4"):
-                if int(f.get("size", 0) or 0) > int(candidates[base].get("size", 0) or 0):
-                    candidates[base] = f
-        else:
-            candidates[base] = f
-
-    return list(candidates.values())
+    return result
 
 def main():
     print("Fetching items list...")
-    search_url = (
-        "https://archive.org/advancedsearch.php?"
-        + urllib.parse.urlencode({
-            "q": f'uploader:"{UPLOADER}" AND (mediatype:movies OR mediatype:audio)',
-            "fl[]": ["identifier", "title", "mediatype"],
-            "rows": 300,
-            "page": 1,
-            "output": "json",
-            "sort[]": "publicdate desc",
-        }, doseq=True)
-    )
+    all_items = []
+    page = 1
+    rows = 200
 
-    with urllib.request.urlopen(search_url, timeout=60) as r:
-        data = json.load(r)
+    while True:
+        search_url = (
+            "https://archive.org/advancedsearch.php?"
+            + urllib.parse.urlencode({
+                "q": f'uploader:"{UPLOADER}" AND (mediatype:movies OR mediatype:audio)',
+                "fl[]": ["identifier", "title", "mediatype"],
+                "rows": rows,
+                "page": page,
+                "output": "json",
+                "sort[]": "publicdate desc",
+            }, doseq=True)
+        )
 
-    items = data.get("response", {}).get("docs", [])
-    print(f"Found {len(items)} items")
+        with urllib.request.urlopen(search_url, timeout=60) as r:
+            data = json.load(r)
+
+        items = data.get("response", {}).get("docs", [])
+        if not items:
+            break
+
+        all_items.extend(items)
+        print(f"  Page {page}: {len(items)} items")
+        page += 1
+        time.sleep(0.5)
+
+        # حماية من الحلقة اللانهائية
+        if page > 50:
+            break
+
+    print(f"Total items found: {len(all_items)}")
 
     lines = ["#EXTM3U"]
     total = 0
     groups = 0
 
-    for item in items:
+    for item in all_items:
         ident = item["identifier"]
         title = (item.get("title") or ident).replace('"', "'")
         print(f"  Processing: {title[:60]}...")
@@ -113,11 +124,10 @@ def main():
             print(f"    → no media files")
             continue
 
-        files.sort(key=lambda x: x["name"])
+        files.sort(key=lambda x: x["name"].lower())
         groups += 1
         print(f"    → {len(files)} files")
 
-        # لوجو القائمة
         logo = f"https://archive.org/services/img/{ident}"
 
         for f in files:
