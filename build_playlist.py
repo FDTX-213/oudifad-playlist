@@ -10,7 +10,7 @@ import time
 UPLOADER = "ouadoudifouad334@gmail.com"
 OUTPUT = "playlist.m3u"
 
-# كل الصيغ المدعومة (يمكنك إضافة المزيد بسهولة)
+# كل الصيغ المدعومة
 VIDEO_EXTS = (
     ".mp4", ".mkv", ".webm", ".avi", ".mov", ".m4v", ".ts", ".flv",
     ".wmv", ".mpg", ".mpeg", ".m2ts", ".vob", ".3gp", ".ogv", ".ia.mp4"
@@ -96,7 +96,6 @@ def main():
         page += 1
         time.sleep(0.5)
 
-        # حماية من الحلقة اللانهائية
         if page > 50:
             break
 
