@@ -85,3 +85,63 @@ def main():
             "fl[]": ["identifier", "title", "mediatype"],
             "rows": 300,
             "page": 1,
+            "output": "json",
+            "sort[]": "publicdate desc",
+        }, doseq=True)
+    )
+
+    with urllib.request.urlopen(search_url, timeout=60) as r:
+        data = json.load(r)
+
+    items = data.get("response", {}).get("docs", [])
+    print(f"Found {len(items)} items")
+
+    lines = ["#EXTM3U"]
+    total = 0
+    groups = 0
+
+    for item in items:
+        ident = item["identifier"]
+        title = (item.get("title") or ident).replace('"', "'")
+        print(f"  Processing: {title[:60]}...")
+
+        try:
+            meta_url = f"https://archive.org/metadata/{ident}"
+            with urllib.request.urlopen(meta_url, timeout=45) as r:
+                meta = json.load(r)
+        except Exception as e:
+            print(f"    SKIP: {e}")
+            continue
+
+        files = get_files(meta)
+        if not files:
+            print(f"    → no media files")
+            continue
+
+        files.sort(key=lambda x: x["name"])
+        groups += 1
+        print(f"    → {len(files)} files")
+
+        logo = f"https://archive.org/services/img/{ident}"
+
+        for f in files:
+            fname = f["name"]
+            ep = clean_name(fname)
+            url = f"https://archive.org/download/{ident}/" + urllib.parse.quote(fname)
+
+            lines.append(
+                f'#EXTINF:-1 tvg-name="{ep}" tvg-logo="{logo}" group-title="{title}",{ep}'
+            )
+            lines.append(url)
+            total += 1
+
+        time.sleep(0.3)
+
+    content = "\n".join(lines) + "\n"
+    with open(OUTPUT, "w", encoding="utf-8") as out:
+        out.write(content)
+
+    print(f"\nDone: {groups} groups, {total} items → {OUTPUT}")
+
+if __name__ == "__main__":
+    main()
