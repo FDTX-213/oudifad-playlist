@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build full M3U playlist from Archive.org account (videos + audio) - keep only highest quality."""
+"""Build full M3U playlist from Archive.org - keep only highest quality version."""
 
 import json
 import re
@@ -28,17 +28,15 @@ def clean_name(filename):
     return name or filename
 
 def get_quality_score(f):
-    """حساب درجة الجودة: كلما أعلى كان أفضل"""
     name = f.get("name", "").lower()
     size = int(f.get("size", 0) or 0)
-
-    score = size  # الأساس هو الحجم
+    score = size
 
     # خصم كبير للجودات المنخفضة
     if any(x in name for x in ["512kb", "256kb", "128kb", "64kb", "low", "small"]):
-        score -= 10_000_000_000  # خصم كبير جداً
+        score -= 10_000_000_000
     if name.endswith(".ia.mp4"):
-        score -= 5_000_000_000   # خصم للنسخ المشتقة
+        score -= 5_000_000_000
 
     # تفضيل الملفات الأصلية
     if not name.endswith(".ia.mp4") and "512kb" not in name:
@@ -47,7 +45,6 @@ def get_quality_score(f):
     return score
 
 def get_files(meta):
-    """استخراج الملفات مع الإبقاء على أعلى جودة فقط لكل فيديو"""
     files = meta.get("files", [])
     candidates = {}
 
@@ -55,7 +52,6 @@ def get_files(meta):
         name = f.get("name", "")
         lower = name.lower()
 
-        # تجاهل الصور والثمبنيلز والملفات غير الإعلامية
         if any(x in lower for x in ["thumb", ".jpg", ".png", ".gif", ".xml", ".json", ".txt", ".srt", ".vtt"]):
             continue
         if "/thumbs/" in lower:
@@ -67,16 +63,13 @@ def get_files(meta):
         if not (is_video or is_audio):
             continue
 
-        # مفتاح بدون امتداد
         base = re.sub(r"(\.ia)?\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus)$", "", name, flags=re.I)
-
         score = get_quality_score(f)
 
-        if base not in candidates or score > candidates[base]["_score"]:
+        if base not in candidates or score > candidates[base].get("_score", -1):
             f["_score"] = score
             candidates[base] = f
 
-    # إزالة الحقل المؤقت
     result = []
     for f in candidates.values():
         f.pop("_score", None)
@@ -92,21 +85,3 @@ def main():
             "fl[]": ["identifier", "title", "mediatype"],
             "rows": 300,
             "page": 1,
-            "output": "json",
-            "sort[]": "publicdate desc",
-        }, doseq=True)
-    )
-
-    with urllib.request.urlopen(search_url, timeout=60) as r:
-        data = json.load(r)
-
-    items = data.get("response", {}).get("docs", [])
-    print(f"Found {len(items)} items")
-
-    lines = ["#EXTM3U"]
-    total = 0
-    groups = 0
-
-    for item in items:
-        ident = item["identifier"]
-        title = (item.get("title") or ident).replace('"', "'
