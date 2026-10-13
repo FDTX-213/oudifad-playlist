@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build M3U playlist - original date order + special episode numbering for one series."""
+"""Build M3U playlist - cartoons forced to the end with custom order."""
 
 import json
 import re
@@ -12,6 +12,29 @@ OUTPUT = "playlist.m3u"
 
 # القائمة التي تأخذ ترقيم الحلقات الخاص
 SPECIAL_SERIES = {"20260925_20260925_1745"}
+
+# ترتيب قوائم الرسوم المتحركة (من الأولى إلى الأخيرة في مجموعة الرسوم)
+CARTOON_ORDER = [
+    "السنافر حلقات مميزة",
+    "مخلص صديق الحيوان",
+    "ملحمة جلجامش",
+    "بانشو الظريف",
+    "كرتون روسي قديم",
+    "توم وجيري",
+    "أفلام ميكي ماوس",
+    "رسوم متحركة العصر الذهبي لديزني",
+    "بينكي وبرين",
+    "ينابيع المعرفة",
+    "كان يا ما كان",
+    "قصص القرآن يحيى الفخراني",
+    "من قصص القرآن والأنبياء بالصلصال",
+    "المحقق كونان",
+    "الأحلام الذهبية",
+    "حكايات ما أحلاها",
+    "حكايات عالمية",
+    "أغاني رسوم متحركة كلاسيكية",
+    "الحلقة الأولى من رسوم متحركة كلاسيكية",
+]
 
 VIDEO_EXTS = (".mp4", ".mkv", ".webm", ".avi", ".mov", ".m4v", ".ts", ".flv")
 AUDIO_EXTS = (".mp3", ".m4a", ".ogg", ".flac", ".wav", ".aac", ".opus")
@@ -55,6 +78,25 @@ def clean_name_special(filename):
     if ep_num > 0:
         return f"{ep_num:03d} - {name}" if name else f"{ep_num:03d}"
     return name or filename
+
+def is_cartoon(title):
+    """هل هذه قائمة رسوم متحركة؟"""
+    t = title.lower()
+    if "رسوم متحركة للأطفال" in t:
+        return True
+    for key in CARTOON_ORDER:
+        if key.lower() in t:
+            return True
+    return False
+
+def get_cartoon_order(title):
+    """إرجاع ترتيب القائمة داخل مجموعة الرسوم (رقم أصغر = يظهر أولاً داخل الرسوم)"""
+    t = title.lower()
+    for i, key in enumerate(CARTOON_ORDER):
+        if key.lower() in t:
+            return i
+    # أي قائمة جديدة تحتوي "رسوم متحركة للأطفال" توضع في الآخر
+    return 999
 
 def get_quality_score(f):
     name = f.get("name", "").lower()
@@ -120,11 +162,28 @@ def main():
     items = data.get("response", {}).get("docs", [])
     print(f"Found {len(items)} items")
 
+    # فصل القوائم العادية عن قوائم الرسوم المتحركة
+    normal_items = []
+    cartoon_items = []
+
+    for item in items:
+        title = item.get("title") or item["identifier"]
+        if is_cartoon(title):
+            cartoon_items.append(item)
+        else:
+            normal_items.append(item)
+
+    # ترتيب الرسوم حسب الترتيب المطلوب
+    cartoon_items.sort(key=lambda x: get_cartoon_order(x.get("title", "")))
+
+    # القوائم العادية تبقى حسب التاريخ (الأحدث أولاً)، ثم الرسوم في الآخر
+    final_items = normal_items + cartoon_items
+
     lines = ["#EXTM3U"]
     total = 0
     groups = 0
 
-    for item in items:
+    for item in final_items:
         ident = item["identifier"]
         title = (item.get("title") or ident).replace('"', "'")
         print(f"  Processing: {title[:60]}...")
@@ -150,7 +209,7 @@ def main():
             files.sort(key=lambda x: x["name"])
 
         groups += 1
-        print(f"    → {len(files)} files" + (" [SPECIAL]" if is_special else ""))
+        print(f"    → {len(files)} files" + (" [SPECIAL]" if is_special else "") + (" [CARTOON]" if is_cartoon(title) else ""))
 
         logo = f"https://archive.org/services/img/{ident}"
 
