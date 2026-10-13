@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Build M3U playlist with multiple custom ordered groups."""
-
 import json
 import re
 import urllib.parse
@@ -9,10 +8,9 @@ import time
 
 UPLOADER = "ouadoudifouad334@gmail.com"
 OUTPUT = "playlist.m3u"
-
 SPECIAL_SERIES = {"20260925_20260925_1745"}
 
-# المجموعة 1: المحتوى الإسرائيلي والعبري (تظهر أولاً بين المجموعات الخاصة)
+# المجموعة 1: المحتوى الإسرائيلي والعبري
 ISRAELI_ORDER = [
     "تعلم العبرية مع داوود",
     "المنتخب الإسرائيلي النسوي لكرة اليد",
@@ -33,7 +31,7 @@ ISRAELI_ORDER = [
     "الكتاب المقدس - العهد الجديد",
 ]
 
-# المجموعة 2: الأغاني والأفلام (تظهر بعد المجموعة الإسرائيلية)
+# المجموعة 2: الأغاني والأفلام
 MIDDLE_ORDER = [
     "قداسة البابا تواضروس الثاني",
     "سفر المزامير وسفر يشوع بن سيراخ",
@@ -52,7 +50,7 @@ MIDDLE_ORDER = [
     "مسلسل كان ياما كان الجزء الأول",
 ]
 
-# المجموعة 3: الرسوم المتحركة (تظهر في الآخر)
+# المجموعة 3: الرسوم المتحركة
 CARTOON_ORDER = [
     "السنافر حلقات مميزة",
     "مخلص صديق الحيوان",
@@ -190,7 +188,6 @@ def main():
     )
     with urllib.request.urlopen(search_url, timeout=60) as r:
         data = json.load(r)
-
     items = data.get("response", {}).get("docs", [])
     print(f"Found {len(items)} items")
 
@@ -225,7 +222,6 @@ def main():
         ident = item["identifier"]
         title = (item.get("title") or ident).replace('"', "'")
         print(f"  Processing: {title[:60]}...")
-
         try:
             meta_url = f"https://archive.org/metadata/{ident}"
             with urllib.request.urlopen(meta_url, timeout=45) as r:
@@ -249,6 +245,7 @@ def main():
         list_type = get_list_type(title)
         print(f"    → {len(files)} files [{list_type.upper()}]")
 
+        # أيقونة خاصة بكل مجموعة
         logo = f"https://archive.org/services/img/{ident}"
 
         for f in files:
