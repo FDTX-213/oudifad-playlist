@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build M3U playlist - cartoons forced to the end with custom order."""
+"""Build M3U playlist - custom order for specific lists + cartoons at the end."""
 
 import json
 import re
@@ -13,7 +13,26 @@ OUTPUT = "playlist.m3u"
 # القائمة التي تأخذ ترقيم الحلقات الخاص
 SPECIAL_SERIES = {"20260925_20260925_1745"}
 
-# ترتيب قوائم الرسوم المتحركة (من الأولى إلى الأخيرة في مجموعة الرسوم)
+# القوائم التي تظهر فوق الرسوم المتحركة (بالترتيب المطلوب)
+MIDDLE_ORDER = [
+    "قداسة البابا تواضروس الثاني",
+    "سفر المزامير وسفر يشوع بن سيراخ",
+    "ترانيم مسيحية أرثوذكسية",
+    "أغاني وموسيقى صوفية",
+    "أغاني روسية وفرنسية وكردية للأطفال",
+    "أغاني جام بيتس خاصة بفؤاد الودودي",
+    "أغاني بالذكاء الإصطناعي",
+    "TOP stef",
+    "أغاني أوروبية خاصة بفؤاد",
+    "أغاني هندية خاصة بفؤاد",
+    "أغاني روسية خاصة بفؤاد الودودي",
+    "أغاني عربية خاصة بفؤاد الودودي",
+    "أفلام ومسرحيات عادل إمام",
+    "أفلام عربية وغربية خاصة بـ فؤاد الودودي",
+    "مسلسل كان ياما كان الجزء الأول",
+]
+
+# ترتيب قوائم الرسوم المتحركة (تظهر في الآخر)
 CARTOON_ORDER = [
     "السنافر حلقات مميزة",
     "مخلص صديق الحيوان",
@@ -79,23 +98,36 @@ def clean_name_special(filename):
         return f"{ep_num:03d} - {name}" if name else f"{ep_num:03d}"
     return name or filename
 
-def is_cartoon(title):
-    """هل هذه قائمة رسوم متحركة؟"""
+def get_list_type(title):
+    """تحديد نوع القائمة: middle أو cartoon أو normal"""
     t = title.lower()
+
+    # فحص القوائم الوسطى
+    for key in MIDDLE_ORDER:
+        if key.lower() in t:
+            return "middle"
+
+    # فحص الرسوم المتحركة
     if "رسوم متحركة للأطفال" in t:
-        return True
+        return "cartoon"
     for key in CARTOON_ORDER:
         if key.lower() in t:
-            return True
-    return False
+            return "cartoon"
+
+    return "normal"
+
+def get_middle_order(title):
+    t = title.lower()
+    for i, key in enumerate(MIDDLE_ORDER):
+        if key.lower() in t:
+            return i
+    return 999
 
 def get_cartoon_order(title):
-    """إرجاع ترتيب القائمة داخل مجموعة الرسوم (رقم أصغر = يظهر أولاً داخل الرسوم)"""
     t = title.lower()
     for i, key in enumerate(CARTOON_ORDER):
         if key.lower() in t:
             return i
-    # أي قائمة جديدة تحتوي "رسوم متحركة للأطفال" توضع في الآخر
     return 999
 
 def get_quality_score(f):
@@ -162,22 +194,27 @@ def main():
     items = data.get("response", {}).get("docs", [])
     print(f"Found {len(items)} items")
 
-    # فصل القوائم العادية عن قوائم الرسوم المتحركة
     normal_items = []
+    middle_items = []
     cartoon_items = []
 
     for item in items:
         title = item.get("title") or item["identifier"]
-        if is_cartoon(title):
+        list_type = get_list_type(title)
+
+        if list_type == "middle":
+            middle_items.append(item)
+        elif list_type == "cartoon":
             cartoon_items.append(item)
         else:
             normal_items.append(item)
 
-    # ترتيب الرسوم حسب الترتيب المطلوب
+    # ترتيب المجموعات الخاصة
+    middle_items.sort(key=lambda x: get_middle_order(x.get("title", "")))
     cartoon_items.sort(key=lambda x: get_cartoon_order(x.get("title", "")))
 
-    # القوائم العادية تبقى حسب التاريخ (الأحدث أولاً)، ثم الرسوم في الآخر
-    final_items = normal_items + cartoon_items
+    # الترتيب النهائي: عادي → وسط → رسوم
+    final_items = normal_items + middle_items + cartoon_items
 
     lines = ["#EXTM3U"]
     total = 0
@@ -209,7 +246,8 @@ def main():
             files.sort(key=lambda x: x["name"])
 
         groups += 1
-        print(f"    → {len(files)} files" + (" [SPECIAL]" if is_special else "") + (" [CARTOON]" if is_cartoon(title) else ""))
+        list_type = get_list_type(title)
+        print(f"    → {len(files)} files" + (" [SPECIAL]" if is_special else "") + f" [{list_type.upper()}]")
 
         logo = f"https://archive.org/services/img/{ident}"
 
