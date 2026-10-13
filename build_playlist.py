@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build M3U playlist - custom order for specific lists + cartoons at the end."""
+"""Build M3U playlist with multiple custom ordered groups."""
 
 import json
 import re
@@ -10,10 +10,30 @@ import time
 UPLOADER = "ouadoudifouad334@gmail.com"
 OUTPUT = "playlist.m3u"
 
-# القائمة التي تأخذ ترقيم الحلقات الخاص
 SPECIAL_SERIES = {"20260925_20260925_1745"}
 
-# القوائم التي تظهر فوق الرسوم المتحركة (بالترتيب المطلوب)
+# المجموعة 1: المحتوى الإسرائيلي والعبري (تظهر أولاً بين المجموعات الخاصة)
+ISRAELI_ORDER = [
+    "تعلم العبرية مع داوود",
+    "المنتخب الإسرائيلي النسوي لكرة اليد",
+    "المسلسل الإسرائيلي نخب الحب",
+    "موسيقى وأغاني إسرائيلية",
+    "أغاني عبرية تعليمية للأطفال",
+    "مرئيات إسرائيلية للأطفال",
+    "حلقات من مسلسلات إسرائيلية لليافعين",
+    "حلقات مجمعة من مسلسلات إسرائيلية لليافعين",
+    "مقاطع من سلسلة اليهود قادمون",
+    "المرئيات السياسية لدولة إسرائيل",
+    "أناشيد وأغاني دينية يهودية ليهود متدينين",
+    "تعريف بأهل الكتاب من طرف الحاخام إلحانان ميلر",
+    "دروس حاخامات موقع صندوق التوراة",
+    "قراءة المزامير لأيام الأسبوع بالعبرية",
+    "التوراة أسفار موسى الخمسة بالعبرية",
+    "الكتاب المقدس - العهد القديم بالعربية",
+    "الكتاب المقدس - العهد الجديد",
+]
+
+# المجموعة 2: الأغاني والأفلام (تظهر بعد المجموعة الإسرائيلية)
 MIDDLE_ORDER = [
     "قداسة البابا تواضروس الثاني",
     "سفر المزامير وسفر يشوع بن سيراخ",
@@ -32,7 +52,7 @@ MIDDLE_ORDER = [
     "مسلسل كان ياما كان الجزء الأول",
 ]
 
-# ترتيب قوائم الرسوم المتحركة (تظهر في الآخر)
+# المجموعة 3: الرسوم المتحركة (تظهر في الآخر)
 CARTOON_ORDER = [
     "السنافر حلقات مميزة",
     "مخلص صديق الحيوان",
@@ -81,7 +101,6 @@ def clean_name_normal(filename):
 def clean_name_special(filename):
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     ep_num = get_episode_number(name)
-
     name = re.sub(r"^\d+[\.\-]?\s*", "", name)
     name = re.sub(r"^HE-\d+-", "", name)
     name = re.sub(r"^\d{4,}-", "", name)
@@ -93,39 +112,28 @@ def clean_name_special(filename):
     name = re.sub(r"\s*פרק\s*$", "", name)
     name = re.sub(r"\s+", " ", name).strip()
     name = re.sub(r"[_\-\s\.]+$", "", name)
-
     if ep_num > 0:
         return f"{ep_num:03d} - {name}" if name else f"{ep_num:03d}"
     return name or filename
 
 def get_list_type(title):
-    """تحديد نوع القائمة: middle أو cartoon أو normal"""
     t = title.lower()
-
-    # فحص القوائم الوسطى
+    for key in ISRAELI_ORDER:
+        if key.lower() in t:
+            return "israeli"
     for key in MIDDLE_ORDER:
         if key.lower() in t:
             return "middle"
-
-    # فحص الرسوم المتحركة
     if "رسوم متحركة للأطفال" in t:
         return "cartoon"
     for key in CARTOON_ORDER:
         if key.lower() in t:
             return "cartoon"
-
     return "normal"
 
-def get_middle_order(title):
+def get_order(title, order_list):
     t = title.lower()
-    for i, key in enumerate(MIDDLE_ORDER):
-        if key.lower() in t:
-            return i
-    return 999
-
-def get_cartoon_order(title):
-    t = title.lower()
-    for i, key in enumerate(CARTOON_ORDER):
+    for i, key in enumerate(order_list):
         if key.lower() in t:
             return i
     return 999
@@ -145,29 +153,22 @@ def get_quality_score(f):
 def get_files(meta):
     files = meta.get("files", [])
     candidates = {}
-
     for f in files:
         name = f.get("name", "")
         lower = name.lower()
-
         if any(x in lower for x in ["thumb", ".jpg", ".png", ".gif", ".xml", ".json", ".txt", ".srt", ".vtt"]):
             continue
         if "/thumbs/" in lower:
             continue
-
         is_video = any(lower.endswith(ext) for ext in VIDEO_EXTS) or lower.endswith(".ia.mp4")
         is_audio = any(lower.endswith(ext) for ext in AUDIO_EXTS)
-
         if not (is_video or is_audio):
             continue
-
         base = re.sub(r"(\.ia)?\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus)$", "", name, flags=re.I)
         score = get_quality_score(f)
-
         if base not in candidates or score > candidates[base].get("_score", -1):
             f["_score"] = score
             candidates[base] = f
-
     result = []
     for f in candidates.values():
         f.pop("_score", None)
@@ -187,7 +188,6 @@ def main():
             "sort[]": "publicdate desc",
         }, doseq=True)
     )
-
     with urllib.request.urlopen(search_url, timeout=60) as r:
         data = json.load(r)
 
@@ -195,26 +195,27 @@ def main():
     print(f"Found {len(items)} items")
 
     normal_items = []
+    israeli_items = []
     middle_items = []
     cartoon_items = []
 
     for item in items:
         title = item.get("title") or item["identifier"]
         list_type = get_list_type(title)
-
-        if list_type == "middle":
+        if list_type == "israeli":
+            israeli_items.append(item)
+        elif list_type == "middle":
             middle_items.append(item)
         elif list_type == "cartoon":
             cartoon_items.append(item)
         else:
             normal_items.append(item)
 
-    # ترتيب المجموعات الخاصة
-    middle_items.sort(key=lambda x: get_middle_order(x.get("title", "")))
-    cartoon_items.sort(key=lambda x: get_cartoon_order(x.get("title", "")))
+    israeli_items.sort(key=lambda x: get_order(x.get("title", ""), ISRAELI_ORDER))
+    middle_items.sort(key=lambda x: get_order(x.get("title", ""), MIDDLE_ORDER))
+    cartoon_items.sort(key=lambda x: get_order(x.get("title", ""), CARTOON_ORDER))
 
-    # الترتيب النهائي: عادي → وسط → رسوم
-    final_items = normal_items + middle_items + cartoon_items
+    final_items = normal_items + israeli_items + middle_items + cartoon_items
 
     lines = ["#EXTM3U"]
     total = 0
@@ -239,7 +240,6 @@ def main():
             continue
 
         is_special = ident in SPECIAL_SERIES
-
         if is_special:
             files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
         else:
@@ -247,22 +247,15 @@ def main():
 
         groups += 1
         list_type = get_list_type(title)
-        print(f"    → {len(files)} files" + (" [SPECIAL]" if is_special else "") + f" [{list_type.upper()}]")
+        print(f"    → {len(files)} files [{list_type.upper()}]")
 
         logo = f"https://archive.org/services/img/{ident}"
 
         for f in files:
             fname = f["name"]
-            if is_special:
-                ep = clean_name_special(fname)
-            else:
-                ep = clean_name_normal(fname)
-
+            ep = clean_name_special(fname) if is_special else clean_name_normal(fname)
             url = f"https://archive.org/download/{ident}/" + urllib.parse.quote(fname)
-
-            lines.append(
-                f'#EXTINF:-1 tvg-name="{ep}" tvg-logo="{logo}" group-title="{title}",{ep}'
-            )
+            lines.append(f'#EXTINF:-1 tvg-name="{ep}" tvg-logo="{logo}" group-title="{title}",{ep}')
             lines.append(url)
             total += 1
 
