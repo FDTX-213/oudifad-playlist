@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build M3U playlist - smart sorting + episode number at the beginning of title."""
+"""Build M3U playlist - smart sorting by episode number at the end of filename."""
 
 import json
 import re
@@ -13,41 +13,30 @@ OUTPUT = "playlist.m3u"
 VIDEO_EXTS = (".mp4", ".mkv", ".webm", ".avi", ".mov", ".m4v", ".ts", ".flv")
 AUDIO_EXTS = (".mp3", ".m4a", ".ogg", ".flac", ".wav", ".aac", ".opus")
 
-def get_episode_number(filename):
-    """استخراج آخر رقم موجود في اسم الملف"""
-    numbers = re.findall(r'\d+', filename)
-    if numbers:
-        return int(numbers[-1])
-    return 0
-
 def clean_name(filename):
-    # إزالة الامتداد
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
-    
-    # استخراج رقم الحلقة
-    ep_num = get_episode_number(name)
-    
-    # تنظيف الاسم
     name = re.sub(r"^\d+[\.\-]?\s*", "", name)
     name = re.sub(r"^HE-\d+-", "", name)
     name = re.sub(r"^\d{4,}-", "", name)
     name = re.sub(r"\s*\d{3,4}p\b", "", name, flags=re.I)
-    name = re.sub(r"\s*(WEB-?DL|BluRay|BRRip|HDRip|x264|h264|AAC|HEVC|HD)\b", "", name, flags=re.I)
+    name = re.sub(r"\s*(WEB-?DL|BluRay|BRRip|HDRip|x264|h264|AAC|HEVC)\b", "", name, flags=re.I)
     name = re.sub(r"\s*\(\d+\)\s*$", "", name)
     name = re.sub(r"\s+\d{4}\s*$", "", name)
-    name = re.sub(r"\s+\d+$", "", name)          # إزالة الرقم من الآخر
-    name = re.sub(r"\s*פרק\s*$", "", name)       # إزالة كلمة "פרק" إذا بقيت في الآخر
     name = re.sub(r"\s+", " ", name).strip()
     name = re.sub(r"[_\-\s\.]+$", "", name)
-    
-    # وضع رقم الحلقة في البداية
-    if ep_num > 0:
-        return f"{ep_num:03d} - {name}" if name else f"{ep_num:03d}"
     return name or filename
 
+def get_episode_number(filename):
+    """استخراج آخر رقم موجود في اسم الملف"""
+    numbers = re.findall(r'\d+', filename)
+    if numbers:
+        return int(numbers[-1])  # آخر رقم
+    return 0
+
 def natural_sort_key(filename):
-    """ترتيب حسب رقم الحلقة"""
-    return (get_episode_number(filename), filename.lower())
+    """مفتاح ترتيب ذكي: حسب رقم الحلقة ثم الاسم"""
+    ep_num = get_episode_number(filename)
+    return (ep_num, filename.lower())
 
 def get_quality_score(f):
     name = f.get("name", "").lower()
@@ -135,7 +124,7 @@ def main():
             print(f"    → no media files")
             continue
 
-        # ترتيب حسب رقم الحلقة
+        # ترتيب ذكي حسب رقم الحلقة (آخر رقم في الاسم)
         files.sort(key=lambda x: natural_sort_key(x["name"]))
         groups += 1
         print(f"    → {len(files)} files")
