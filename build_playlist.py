@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build full M3U playlist from Archive.org - keep only highest quality version."""
+"""Build M3U playlist - each video gets its own thumbnail when available."""
 
 import json
 import re
@@ -31,28 +31,29 @@ def get_quality_score(f):
     name = f.get("name", "").lower()
     size = int(f.get("size", 0) or 0)
     score = size
-
-    # خصم كبير للجودات المنخفضة
     if any(x in name for x in ["512kb", "256kb", "128kb", "64kb", "low", "small"]):
         score -= 10_000_000_000
     if name.endswith(".ia.mp4"):
         score -= 5_000_000_000
-
-    # تفضيل الملفات الأصلية
     if not name.endswith(".ia.mp4") and "512kb" not in name:
         score += 1_000_000_000
-
     return score
 
 def get_files(meta):
     files = meta.get("files", [])
     candidates = {}
+    images = {}  # لحفظ الصور الموجودة
 
     for f in files:
         name = f.get("name", "")
         lower = name.lower()
 
-        if any(x in lower for x in ["thumb", ".jpg", ".png", ".gif", ".xml", ".json", ".txt", ".srt", ".vtt"]):
+        # جمع الصور لاستخدامها كأيقونات
+        if lower.endswith((".jpg", ".jpeg", ".png", ".gif", ".webp")) and "thumb" not in lower:
+            base_img = re.sub(r"\.(jpg|jpeg|png|gif|webp)$", "", name, flags=re.I)
+            images[base_img.lower()] = name
+
+        if any(x in lower for x in ["thumb", ".xml", ".json", ".txt", ".srt", ".vtt"]):
             continue
         if "/thumbs/" in lower:
             continue
@@ -74,7 +75,24 @@ def get_files(meta):
     for f in candidates.values():
         f.pop("_score", None)
         result.append(f)
-    return result
+    return result, images
+
+def find_logo(ident, fname, images, default_logo):
+    """محاولة إيجاد أيقونة خاصة بالملف"""
+    base = re.sub(r"(\.ia)?\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus)$", "", fname, flags=re.I)
+    base_lower = base.lower()
+
+    # 1. صورة بنفس اسم الملف
+    if base_lower in images:
+        return f"https://archive.org/download/{ident}/" + urllib.parse.quote(images[base_lower])
+
+    # 2. صورة تحتوي على اسم الملف
+    for img_base, img_name in images.items():
+        if base_lower in img_base or img_base in base_lower:
+            return f"https://archive.org/download/{ident}/" + urllib.parse.quote(img_name)
+
+    # 3. العودة للأيقونة العامة
+    return default_logo
 
 def main():
     print("Fetching items list...")
@@ -113,7 +131,7 @@ def main():
             print(f"    SKIP: {e}")
             continue
 
-        files = get_files(meta)
+        files, images = get_files(meta)
         if not files:
             print(f"    → no media files")
             continue
@@ -122,12 +140,13 @@ def main():
         groups += 1
         print(f"    → {len(files)} files")
 
-        logo = f"https://archive.org/services/img/{ident}"
+        default_logo = f"https://archive.org/services/img/{ident}"
 
         for f in files:
             fname = f["name"]
             ep = clean_name(fname)
             url = f"https://archive.org/download/{ident}/" + urllib.parse.quote(fname)
+            logo = find_logo(ident, fname, images, default_logo)
 
             lines.append(
                 f'#EXTINF:-1 tvg-name="{ep}" tvg-logo="{logo}" group-title="{title}",{ep}'
