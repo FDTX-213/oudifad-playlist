@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build M3U playlist - special episode numbering only for one series."""
+"""Build M3U playlist with smart category sorting + special episode numbering."""
 
 import json
 import re
@@ -10,7 +10,7 @@ import time
 UPLOADER = "ouadoudifouad334@gmail.com"
 OUTPUT = "playlist.m3u"
 
-# فقط هذه القائمة تأخذ معاملة خاصة
+# القائمة التي تأخذ ترقيم الحلقات الخاص
 SPECIAL_SERIES = {"20260925_20260925_1745"}
 
 VIDEO_EXTS = (".mp4", ".mkv", ".webm", ".avi", ".mov", ".m4v", ".ts", ".flv")
@@ -55,6 +55,33 @@ def clean_name_special(filename):
     if ep_num > 0:
         return f"{ep_num:03d} - {name}" if name else f"{ep_num:03d}"
     return name or filename
+
+def get_category_priority(title):
+    """تحديد ترتيب القائمة حسب موضوعها (الرقم الأصغر يظهر أولاً)"""
+    t = title.lower()
+
+    # 1. المسلسلات الإسرائيلية
+    if any(x in t for x in ["إسرائيلي", "إسرائيلية", "نخب الحب", "لليافعين", "كرة اليد"]):
+        return 1
+
+    # 2. الرسوم المتحركة ومحتوى الأطفال
+    if any(x in t for x in ["رسوم متحركة", "للأطفال", "كونان", "ديزني", "بينكي", "الأحلام الذهبية", "صديق الحيوان"]):
+        return 2
+
+    # 3. الأغاني والموسيقى
+    if any(x in t for x in ["أغاني", "موسيقى", "الأصفهاني", "هندية", "أوروبية"]):
+        return 3
+
+    # 4. الأفلام
+    if any(x in t for x in ["أفلام", "فيلم", "عادل إمام", "ميكي ماوس", "مسرحيات"]):
+        return 4
+
+    # 5. المحتوى الديني والإسلامي
+    if any(x in t for x in ["قرآن", "محاضرات", "دروس", "الشيخ", "الكتاب المقدس", "قصص القرآن", "الفكر الإسلامي", "الإسلامي", "التوراة", "مزامير"]):
+        return 5
+
+    # 6. الباقي
+    return 6
 
 def get_quality_score(f):
     name = f.get("name", "").lower()
@@ -119,6 +146,9 @@ def main():
 
     items = data.get("response", {}).get("docs", [])
     print(f"Found {len(items)} items")
+
+    # ترتيب القوائم حسب التصنيف
+    items.sort(key=lambda x: (get_category_priority(x.get("title", "")), x.get("title", "")))
 
     lines = ["#EXTM3U"]
     total = 0
