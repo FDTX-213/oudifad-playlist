@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build M3U playlist - each video gets its own thumbnail when available."""
+"""Build M3U playlist - smart sorting + episode number at the beginning of title."""
 
 import json
 import re
@@ -13,19 +13,41 @@ OUTPUT = "playlist.m3u"
 VIDEO_EXTS = (".mp4", ".mkv", ".webm", ".avi", ".mov", ".m4v", ".ts", ".flv")
 AUDIO_EXTS = (".mp3", ".m4a", ".ogg", ".flac", ".wav", ".aac", ".opus")
 
+def get_episode_number(filename):
+    """استخراج آخر رقم موجود في اسم الملف"""
+    numbers = re.findall(r'\d+', filename)
+    if numbers:
+        return int(numbers[-1])
+    return 0
+
 def clean_name(filename):
+    # إزالة الامتداد
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
+    
+    # استخراج رقم الحلقة
+    ep_num = get_episode_number(name)
+    
+    # تنظيف الاسم
     name = re.sub(r"^\d+[\.\-]?\s*", "", name)
     name = re.sub(r"^HE-\d+-", "", name)
     name = re.sub(r"^\d{4,}-", "", name)
     name = re.sub(r"\s*\d{3,4}p\b", "", name, flags=re.I)
-    name = re.sub(r"\s*(WEB-?DL|BluRay|BRRip|HDRip|x264|h264|AAC|HEVC)\b", "", name, flags=re.I)
+    name = re.sub(r"\s*(WEB-?DL|BluRay|BRRip|HDRip|x264|h264|AAC|HEVC|HD)\b", "", name, flags=re.I)
     name = re.sub(r"\s*\(\d+\)\s*$", "", name)
     name = re.sub(r"\s+\d{4}\s*$", "", name)
-    name = re.sub(r"\s+\d+$", "", name)
+    name = re.sub(r"\s+\d+$", "", name)          # إزالة الرقم من الآخر
+    name = re.sub(r"\s*פרק\s*$", "", name)       # إزالة كلمة "פרק" إذا بقيت في الآخر
     name = re.sub(r"\s+", " ", name).strip()
     name = re.sub(r"[_\-\s\.]+$", "", name)
+    
+    # وضع رقم الحلقة في البداية
+    if ep_num > 0:
+        return f"{ep_num:03d} - {name}" if name else f"{ep_num:03d}"
     return name or filename
+
+def natural_sort_key(filename):
+    """ترتيب حسب رقم الحلقة"""
+    return (get_episode_number(filename), filename.lower())
 
 def get_quality_score(f):
     name = f.get("name", "").lower()
@@ -42,18 +64,12 @@ def get_quality_score(f):
 def get_files(meta):
     files = meta.get("files", [])
     candidates = {}
-    images = {}  # لحفظ الصور الموجودة
 
     for f in files:
         name = f.get("name", "")
         lower = name.lower()
 
-        # جمع الصور لاستخدامها كأيقونات
-        if lower.endswith((".jpg", ".jpeg", ".png", ".gif", ".webp")) and "thumb" not in lower:
-            base_img = re.sub(r"\.(jpg|jpeg|png|gif|webp)$", "", name, flags=re.I)
-            images[base_img.lower()] = name
-
-        if any(x in lower for x in ["thumb", ".xml", ".json", ".txt", ".srt", ".vtt"]):
+        if any(x in lower for x in ["thumb", ".jpg", ".png", ".gif", ".xml", ".json", ".txt", ".srt", ".vtt"]):
             continue
         if "/thumbs/" in lower:
             continue
@@ -75,24 +91,7 @@ def get_files(meta):
     for f in candidates.values():
         f.pop("_score", None)
         result.append(f)
-    return result, images
-
-def find_logo(ident, fname, images, default_logo):
-    """محاولة إيجاد أيقونة خاصة بالملف"""
-    base = re.sub(r"(\.ia)?\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus)$", "", fname, flags=re.I)
-    base_lower = base.lower()
-
-    # 1. صورة بنفس اسم الملف
-    if base_lower in images:
-        return f"https://archive.org/download/{ident}/" + urllib.parse.quote(images[base_lower])
-
-    # 2. صورة تحتوي على اسم الملف
-    for img_base, img_name in images.items():
-        if base_lower in img_base or img_base in base_lower:
-            return f"https://archive.org/download/{ident}/" + urllib.parse.quote(img_name)
-
-    # 3. العودة للأيقونة العامة
-    return default_logo
+    return result
 
 def main():
     print("Fetching items list...")
@@ -131,22 +130,22 @@ def main():
             print(f"    SKIP: {e}")
             continue
 
-        files, images = get_files(meta)
+        files = get_files(meta)
         if not files:
             print(f"    → no media files")
             continue
 
-        files.sort(key=lambda x: x["name"])
+        # ترتيب حسب رقم الحلقة
+        files.sort(key=lambda x: natural_sort_key(x["name"]))
         groups += 1
         print(f"    → {len(files)} files")
 
-        default_logo = f"https://archive.org/services/img/{ident}"
+        logo = f"https://archive.org/services/img/{ident}"
 
         for f in files:
             fname = f["name"]
             ep = clean_name(fname)
             url = f"https://archive.org/download/{ident}/" + urllib.parse.quote(fname)
-            logo = find_logo(ident, fname, images, default_logo)
 
             lines.append(
                 f'#EXTINF:-1 tvg-name="{ep}" tvg-logo="{logo}" group-title="{title}",{ep}'
