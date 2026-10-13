@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build M3U playlist - smart sorting by episode number at the end of filename."""
+"""Build M3U playlist - special episode numbering only for one series."""
 
 import json
 import re
@@ -10,10 +10,19 @@ import time
 UPLOADER = "ouadoudifouad334@gmail.com"
 OUTPUT = "playlist.m3u"
 
+# فقط هذه القائمة تأخذ معاملة خاصة
+SPECIAL_SERIES = {"20260925_20260925_1745"}
+
 VIDEO_EXTS = (".mp4", ".mkv", ".webm", ".avi", ".mov", ".m4v", ".ts", ".flv")
 AUDIO_EXTS = (".mp3", ".m4a", ".ogg", ".flac", ".wav", ".aac", ".opus")
 
-def clean_name(filename):
+def get_episode_number(filename):
+    numbers = re.findall(r'\d+', filename)
+    if numbers:
+        return int(numbers[-1])
+    return 0
+
+def clean_name_normal(filename):
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     name = re.sub(r"^\d+[\.\-]?\s*", "", name)
     name = re.sub(r"^HE-\d+-", "", name)
@@ -22,21 +31,30 @@ def clean_name(filename):
     name = re.sub(r"\s*(WEB-?DL|BluRay|BRRip|HDRip|x264|h264|AAC|HEVC)\b", "", name, flags=re.I)
     name = re.sub(r"\s*\(\d+\)\s*$", "", name)
     name = re.sub(r"\s+\d{4}\s*$", "", name)
+    name = re.sub(r"\s+\d+$", "", name)
     name = re.sub(r"\s+", " ", name).strip()
     name = re.sub(r"[_\-\s\.]+$", "", name)
     return name or filename
 
-def get_episode_number(filename):
-    """استخراج آخر رقم موجود في اسم الملف"""
-    numbers = re.findall(r'\d+', filename)
-    if numbers:
-        return int(numbers[-1])  # آخر رقم
-    return 0
+def clean_name_special(filename):
+    name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
+    ep_num = get_episode_number(name)
 
-def natural_sort_key(filename):
-    """مفتاح ترتيب ذكي: حسب رقم الحلقة ثم الاسم"""
-    ep_num = get_episode_number(filename)
-    return (ep_num, filename.lower())
+    name = re.sub(r"^\d+[\.\-]?\s*", "", name)
+    name = re.sub(r"^HE-\d+-", "", name)
+    name = re.sub(r"^\d{4,}-", "", name)
+    name = re.sub(r"\s*\d{3,4}p\b", "", name, flags=re.I)
+    name = re.sub(r"\s*(WEB-?DL|BluRay|BRRip|HDRip|x264|h264|AAC|HEVC|HD)\b", "", name, flags=re.I)
+    name = re.sub(r"\s*\(\d+\)\s*$", "", name)
+    name = re.sub(r"\s+\d{4}\s*$", "", name)
+    name = re.sub(r"\s+\d+$", "", name)
+    name = re.sub(r"\s*פרק\s*$", "", name)
+    name = re.sub(r"\s+", " ", name).strip()
+    name = re.sub(r"[_\-\s\.]+$", "", name)
+
+    if ep_num > 0:
+        return f"{ep_num:03d} - {name}" if name else f"{ep_num:03d}"
+    return name or filename
 
 def get_quality_score(f):
     name = f.get("name", "").lower()
@@ -124,16 +142,25 @@ def main():
             print(f"    → no media files")
             continue
 
-        # ترتيب ذكي حسب رقم الحلقة (آخر رقم في الاسم)
-        files.sort(key=lambda x: natural_sort_key(x["name"]))
+        is_special = ident in SPECIAL_SERIES
+
+        if is_special:
+            files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
+        else:
+            files.sort(key=lambda x: x["name"])
+
         groups += 1
-        print(f"    → {len(files)} files")
+        print(f"    → {len(files)} files" + (" [SPECIAL]" if is_special else ""))
 
         logo = f"https://archive.org/services/img/{ident}"
 
         for f in files:
             fname = f["name"]
-            ep = clean_name(fname)
+            if is_special:
+                ep = clean_name_special(fname)
+            else:
+                ep = clean_name_normal(fname)
+
             url = f"https://archive.org/download/{ident}/" + urllib.parse.quote(fname)
 
             lines.append(
