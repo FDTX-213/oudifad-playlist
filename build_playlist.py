@@ -5,12 +5,47 @@ import re
 import urllib.parse
 import urllib.request
 import time
-
 UPLOADER = "ouadoudifouad334@gmail.com"
 OUTPUT = "playlist.m3u"
 SPECIAL_SERIES = {"20260925_20260925_1745"}
 
-# المجموعة 1: المحتوى الإسرائيلي والعبري
+# المجموعة 1: التاريخ والثقافة والفكر (فوق المغربي)
+HISTORY_ORDER = [
+    "تعلم الرسم - بوب روس",
+    "تعلم باحتراف الشطرنج مع لعبة الشطرنج ثلاثية الأبعاد",
+    "المصباح العلمي دروس في الرياضيات والفيزياء والعلوم",
+    "مسرحيات صوتية عالمية",
+    "الأغاني للأصفهاني دراما الإذاعة المصرية",
+    "سعد الله آغا القلعة حياة وفن عبد الوهاب وفريد وأسمهان",
+    "مسلسل طاش ما طاش",
+    "مسلسل الأغاني لأبي الفرج الأصفهاني",
+    "مسلسل مجالس العرب من مجالس هارون الرشيد",
+    "العلم والايمان - مصطفى محمود",
+    "مكتبة الفلسفة وعلم النفس والإجتماع المرئية الخاصة بفؤاد الودودي",
+    "تاريخ الإختراعات",
+    "تأريخ القصص الدينية",
+    "تاريخ الأمم",
+    "بين الأسطورة والمعلومة",
+    "الأنوناكي حقيقة العبودية والتلاعب بمورثاتنا الجينية",
+    "التاريخ الفرعوني المعارف الضائعة مع أحمد عدلي",
+    "ثقافة عامة علمية مع معتز محسن",
+    "وثائق مرئية إسلامية تعليق سلامة محاسنة",
+    "الحضارة الإسلامية",
+    "الخلافة الإسلامية في ألف عام",
+    "الفكر الإسلامي المعاصر",
+]
+
+# المجموعة 2: المحتوى المغربي
+MOROCCAN_ORDER = [
+    "التصوف العرفاني",
+    "أغاني دينية شيعية للرادود باسم الكربلائي",
+    "ذاكرة المدن - تاريخ مدينة فاس وسلا ومكناس والرباط ومراكش",
+    "مراكش وفاس زمان لقطات قديمة",
+    "أفلام ومسرحيات مغربية",
+    "تاريخ ملوك المغرب العلويين",
+]
+
+# المجموعة 3: المحتوى الإسرائيلي والعبري
 ISRAELI_ORDER = [
     "تعلم العبرية مع داوود",
     "المنتخب الإسرائيلي النسوي لكرة اليد",
@@ -31,7 +66,7 @@ ISRAELI_ORDER = [
     "الكتاب المقدس - العهد الجديد",
 ]
 
-# المجموعة 2: الأغاني والأفلام
+# المجموعة 4: الأغاني والأفلام
 MIDDLE_ORDER = [
     "قداسة البابا تواضروس الثاني",
     "سفر المزامير وسفر يشوع بن سيراخ",
@@ -51,7 +86,7 @@ MIDDLE_ORDER = [
     "مسلسل كان ياما كان الجزء الأول",
 ]
 
-# المجموعة 3: الرسوم المتحركة
+# المجموعة 5: الرسوم المتحركة
 CARTOON_ORDER = [
     "السنافر حلقات مميزة",
     "مخلص صديق الحيوان",
@@ -117,6 +152,12 @@ def clean_name_special(filename):
 
 def get_list_type(title):
     t = title.lower()
+    for key in HISTORY_ORDER:
+        if key.lower() in t:
+            return "history"
+    for key in MOROCCAN_ORDER:
+        if key.lower() in t:
+            return "moroccan"
     for key in ISRAELI_ORDER:
         if key.lower() in t:
             return "israeli"
@@ -193,6 +234,8 @@ def main():
     print(f"Found {len(items)} items")
 
     normal_items = []
+    history_items = []
+    moroccan_items = []
     israeli_items = []
     middle_items = []
     cartoon_items = []
@@ -200,7 +243,11 @@ def main():
     for item in items:
         title = item.get("title") or item["identifier"]
         list_type = get_list_type(title)
-        if list_type == "israeli":
+        if list_type == "history":
+            history_items.append(item)
+        elif list_type == "moroccan":
+            moroccan_items.append(item)
+        elif list_type == "israeli":
             israeli_items.append(item)
         elif list_type == "middle":
             middle_items.append(item)
@@ -209,16 +256,18 @@ def main():
         else:
             normal_items.append(item)
 
+    history_items.sort(key=lambda x: get_order(x.get("title", ""), HISTORY_ORDER))
+    moroccan_items.sort(key=lambda x: get_order(x.get("title", ""), MOROCCAN_ORDER))
     israeli_items.sort(key=lambda x: get_order(x.get("title", ""), ISRAELI_ORDER))
     middle_items.sort(key=lambda x: get_order(x.get("title", ""), MIDDLE_ORDER))
     cartoon_items.sort(key=lambda x: get_order(x.get("title", ""), CARTOON_ORDER))
 
-    final_items = normal_items + israeli_items + middle_items + cartoon_items
+    # الترتيب النهائي: عادي → تاريخ وثقافة → مغربي → إسرائيلي → وسط → كارتون
+    final_items = normal_items + history_items + moroccan_items + israeli_items + middle_items + cartoon_items
 
     lines = ["#EXTM3U"]
     total = 0
     groups = 0
-
     for item in final_items:
         ident = item["identifier"]
         title = (item.get("title") or ident).replace('"', "'")
@@ -230,25 +279,19 @@ def main():
         except Exception as e:
             print(f"    SKIP: {e}")
             continue
-
         files = get_files(meta)
         if not files:
             print(f"    → no media files")
             continue
-
         is_special = ident in SPECIAL_SERIES
         if is_special:
             files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
         else:
             files.sort(key=lambda x: x["name"])
-
         groups += 1
         list_type = get_list_type(title)
         print(f"    → {len(files)} files [{list_type.upper()}]")
-
-        # أيقونة خاصة بكل مجموعة
         logo = f"https://archive.org/services/img/{ident}"
-
         for f in files:
             fname = f["name"]
             ep = clean_name_special(fname) if is_special else clean_name_normal(fname)
@@ -256,13 +299,10 @@ def main():
             lines.append(f'#EXTINF:-1 tvg-name="{ep}" tvg-logo="{logo}" group-title="{title}",{ep}')
             lines.append(url)
             total += 1
-
         time.sleep(0.3)
-
     content = "\n".join(lines) + "\n"
     with open(OUTPUT, "w", encoding="utf-8") as out:
         out.write(content)
-
     print(f"\nDone: {groups} groups, {total} items → {OUTPUT}")
 
 if __name__ == "__main__":
