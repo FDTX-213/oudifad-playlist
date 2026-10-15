@@ -9,7 +9,36 @@ UPLOADER = "ouadoudifouad334@gmail.com"
 OUTPUT = "playlist.m3u"
 SPECIAL_SERIES = {"20260925_20260925_1745"}
 
-# المجموعة 1: التاريخ والثقافة والفكر (فوق المغربي)
+# المجموعة 1: القرآن الكريم (فوق الحياة الطبيعية)
+QURAN_ORDER = [
+    "القرآن الكريم القارئ علي صلاح عمر",
+    "القرآن الكريم مقاطع",
+    "مرئيات الشيخ عبد الباسط عبد الصمد",
+    "مرئيات الشيخ محمود خليل الحصري",
+    "مصحف الشيخ محمود خليل الحصري رحمه الله برواية حفص عن عاصم",
+    "ختمة الأجزاء الشيخ محمود خليل الحصري رحمه الله برواية حفص عن عاصم",
+    "أسطوانات الشيخ محمود خليل الحصري رحمه الله",
+]
+
+# المجموعة 2: الحياة الطبيعية والاجتماعية
+NATURE_ORDER = [
+    "الألعاب الأولمبية والرياضية",
+    "تداريب كرة اليد",
+    "BIBI",
+    "BXL",
+    "علوم الحياة والأرض",
+    "حيوانات الطبيعة",
+    "التكنولوجيا البدائية",
+    "التكنولوجيا المستقبلية",
+    "طائرات وآلات السفر",
+    "تجديد الأجهزة",
+    "李子柒 Liziqi",
+    "التخييم",
+    "أماكن مع صوت المطر",
+    "أمطار وعواصف رعدية",
+]
+
+# المجموعة 3: التاريخ والثقافة والفكر
 HISTORY_ORDER = [
     "تعلم الرسم - بوب روس",
     "تعلم باحتراف الشطرنج مع لعبة الشطرنج ثلاثية الأبعاد",
@@ -35,7 +64,7 @@ HISTORY_ORDER = [
     "الفكر الإسلامي المعاصر",
 ]
 
-# المجموعة 2: المحتوى المغربي
+# المجموعة 4: المحتوى المغربي
 MOROCCAN_ORDER = [
     "التصوف العرفاني",
     "أغاني دينية شيعية للرادود باسم الكربلائي",
@@ -45,7 +74,7 @@ MOROCCAN_ORDER = [
     "تاريخ ملوك المغرب العلويين",
 ]
 
-# المجموعة 3: المحتوى الإسرائيلي والعبري
+# المجموعة 5: المحتوى الإسرائيلي والعبري
 ISRAELI_ORDER = [
     "تعلم العبرية مع داوود",
     "المنتخب الإسرائيلي النسوي لكرة اليد",
@@ -66,7 +95,7 @@ ISRAELI_ORDER = [
     "الكتاب المقدس - العهد الجديد",
 ]
 
-# المجموعة 4: الأغاني والأفلام
+# المجموعة 6: الأغاني والأفلام
 MIDDLE_ORDER = [
     "قداسة البابا تواضروس الثاني",
     "سفر المزامير وسفر يشوع بن سيراخ",
@@ -86,7 +115,7 @@ MIDDLE_ORDER = [
     "مسلسل كان ياما كان الجزء الأول",
 ]
 
-# المجموعة 5: الرسوم المتحركة
+# المجموعة 7: الرسوم المتحركة
 CARTOON_ORDER = [
     "السنافر حلقات مميزة",
     "مخلص صديق الحيوان",
@@ -152,6 +181,12 @@ def clean_name_special(filename):
 
 def get_list_type(title):
     t = title.lower()
+    for key in QURAN_ORDER:
+        if key.lower() in t:
+            return "quran"
+    for key in NATURE_ORDER:
+        if key.lower() in t:
+            return "nature"
     for key in HISTORY_ORDER:
         if key.lower() in t:
             return "history"
@@ -234,6 +269,8 @@ def main():
     print(f"Found {len(items)} items")
 
     normal_items = []
+    quran_items = []
+    nature_items = []
     history_items = []
     moroccan_items = []
     israeli_items = []
@@ -243,7 +280,11 @@ def main():
     for item in items:
         title = item.get("title") or item["identifier"]
         list_type = get_list_type(title)
-        if list_type == "history":
+        if list_type == "quran":
+            quran_items.append(item)
+        elif list_type == "nature":
+            nature_items.append(item)
+        elif list_type == "history":
             history_items.append(item)
         elif list_type == "moroccan":
             moroccan_items.append(item)
@@ -256,14 +297,16 @@ def main():
         else:
             normal_items.append(item)
 
+    quran_items.sort(key=lambda x: get_order(x.get("title", ""), QURAN_ORDER))
+    nature_items.sort(key=lambda x: get_order(x.get("title", ""), NATURE_ORDER))
     history_items.sort(key=lambda x: get_order(x.get("title", ""), HISTORY_ORDER))
     moroccan_items.sort(key=lambda x: get_order(x.get("title", ""), MOROCCAN_ORDER))
     israeli_items.sort(key=lambda x: get_order(x.get("title", ""), ISRAELI_ORDER))
     middle_items.sort(key=lambda x: get_order(x.get("title", ""), MIDDLE_ORDER))
     cartoon_items.sort(key=lambda x: get_order(x.get("title", ""), CARTOON_ORDER))
 
-    # الترتيب النهائي: عادي → تاريخ وثقافة → مغربي → إسرائيلي → وسط → كارتون
-    final_items = normal_items + history_items + moroccan_items + israeli_items + middle_items + cartoon_items
+    # الترتيب النهائي: عادي → قرآن → حياة طبيعية → تاريخ → مغربي → إسرائيلي → وسط → كارتون
+    final_items = normal_items + quran_items + nature_items + history_items + moroccan_items + israeli_items + middle_items + cartoon_items
 
     lines = ["#EXTM3U"]
     total = 0
