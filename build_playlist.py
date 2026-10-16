@@ -8,19 +8,7 @@ import time
 UPLOADER = "ouadoudifouad334@gmail.com"
 OUTPUT = "playlist.m3u"
 SPECIAL_SERIES = {"20260925_20260925_1745"}
-
-# المجموعة 1: القرآن الكريم (فوق الحياة الطبيعية)
-QURAN_ORDER = [
-    "القرآن الكريم القارئ علي صلاح عمر",
-    "القرآن الكريم مقاطع",
-    "مرئيات الشيخ عبد الباسط عبد الصمد",
-    "مرئيات الشيخ محمود خليل الحصري",
-    "مصحف الشيخ محمود خليل الحصري رحمه الله برواية حفص عن عاصم",
-    "ختمة الأجزاء الشيخ محمود خليل الحصري رحمه الله برواية حفص عن عاصم",
-    "أسطوانات الشيخ محمود خليل الحصري رحمه الله",
-]
-
-# المجموعة 2: الحياة الطبيعية والاجتماعية
+# المجموعة 1: الحياة الطبيعية والاجتماعية
 NATURE_ORDER = [
     "الألعاب الأولمبية والرياضية",
     "تداريب كرة اليد",
@@ -37,8 +25,7 @@ NATURE_ORDER = [
     "أماكن مع صوت المطر",
     "أمطار وعواصف رعدية",
 ]
-
-# المجموعة 3: التاريخ والثقافة والفكر
+# المجموعة 2: التاريخ والثقافة والفكر
 HISTORY_ORDER = [
     "تعلم الرسم - بوب روس",
     "تعلم باحتراف الشطرنج مع لعبة الشطرنج ثلاثية الأبعاد",
@@ -69,8 +56,7 @@ HISTORY_ORDER = [
     "الخلافة الإسلامية في ألف عام",
     "الفكر الإسلامي المعاصر",
 ]
-
-# المجموعة 4: المحتوى المغربي
+# المجموعة 3: المحتوى المغربي
 MOROCCAN_ORDER = [
     "التصوف العرفاني",
     "أغاني دينية شيعية للرادود باسم الكربلائي",
@@ -79,8 +65,7 @@ MOROCCAN_ORDER = [
     "أفلام ومسرحيات مغربية",
     "تاريخ ملوك المغرب العلويين",
 ]
-
-# المجموعة 5: المحتوى الإسرائيلي والعبري
+# المجموعة 4: المحتوى الإسرائيلي والعبري
 ISRAELI_ORDER = [
     "تعلم العبرية مع داوود",
     "المنتخب الإسرائيلي النسوي لكرة اليد",
@@ -100,8 +85,7 @@ ISRAELI_ORDER = [
     "الكتاب المقدس - العهد القديم بالعربية",
     "الكتاب المقدس - العهد الجديد",
 ]
-
-# المجموعة 6: الأغاني والأفلام
+# المجموعة 5: الأغاني والأفلام
 MIDDLE_ORDER = [
     "قداسة البابا تواضروس الثاني",
     "سفر المزامير وسفر يشوع بن سيراخ",
@@ -117,8 +101,7 @@ MIDDLE_ORDER = [
     "أغاني روسية خاصة بفؤاد الودودي",
     "أغاني عربية خاصة بفؤاد الودودي",
 ]
-
-# المجموعة 7: الرسوم المتحركة
+# المجموعة 6: الرسوم المتحركة
 CARTOON_ORDER = [
     "السنافر حلقات مميزة",
     "مخلص صديق الحيوان",
@@ -141,16 +124,23 @@ CARTOON_ORDER = [
     "أغاني رسوم متحركة كلاسيكية",
     "الحلقة الأولى من رسوم متحركة كلاسيكية",
 ]
-
+# المجموعة 7: القرآن الكريم (الأخيرة)
+QURAN_ORDER = [
+    "القرآن الكريم القارئ علي صلاح عمر",
+    "القرآن الكريم مقاطع",
+    "مرئيات الشيخ عبد الباسط عبد الصمد",
+    "مرئيات الشيخ محمود خليل الحصري",
+    "مصحف الشيخ محمود خليل الحصري رحمه الله برواية حفص عن عاصم",
+    "ختمة الأجزاء الشيخ محمود خليل الحصري رحمه الله برواية حفص عن عاصم",
+    "أسطوانات الشيخ محمود خليل الحصري رحمه الله",
+]
 VIDEO_EXTS = (".mp4", ".mkv", ".webm", ".avi", ".mov", ".m4v", ".ts", ".flv")
 AUDIO_EXTS = (".mp3", ".m4a", ".ogg", ".flac", ".wav", ".aac", ".opus")
-
 def get_episode_number(filename):
     numbers = re.findall(r'\d+', filename)
     if numbers:
         return int(numbers[-1])
     return 0
-
 def clean_name_normal(filename):
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     name = re.sub(r"^\d+[\.\-]?\s*", "", name)
@@ -164,7 +154,6 @@ def clean_name_normal(filename):
     name = re.sub(r"\s+", " ", name).strip()
     name = re.sub(r"[_\-\s\.]+$", "", name)
     return name or filename
-
 def clean_name_special(filename):
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     ep_num = get_episode_number(name)
@@ -182,7 +171,6 @@ def clean_name_special(filename):
     if ep_num > 0:
         return f"{ep_num:03d} - {name}" if name else f"{ep_num:03d}"
     return name or filename
-
 def get_list_type(title):
     t = title.lower()
     for key in QURAN_ORDER:
@@ -209,14 +197,12 @@ def get_list_type(title):
         if key.lower() in t:
             return "cartoon"
     return "normal"
-
 def get_order(title, order_list):
     t = title.lower()
     for i, key in enumerate(order_list):
         if key.lower() in t:
             return i
     return 999
-
 def get_quality_score(f):
     name = f.get("name", "").lower()
     size = int(f.get("size", 0) or 0)
@@ -228,7 +214,6 @@ def get_quality_score(f):
     if not name.endswith(".ia.mp4") and "512kb" not in name:
         score += 1_000_000_000
     return score
-
 def get_files(meta):
     files = meta.get("files", [])
     candidates = {}
@@ -253,7 +238,6 @@ def get_files(meta):
         f.pop("_score", None)
         result.append(f)
     return result
-
 def main():
     print("Fetching items list...")
     search_url = (
@@ -271,7 +255,6 @@ def main():
         data = json.load(r)
     items = data.get("response", {}).get("docs", [])
     print(f"Found {len(items)} items")
-
     normal_items = []
     quran_items = []
     nature_items = []
@@ -280,7 +263,6 @@ def main():
     israeli_items = []
     middle_items = []
     cartoon_items = []
-
     for item in items:
         title = item.get("title") or item["identifier"]
         list_type = get_list_type(title)
@@ -300,7 +282,6 @@ def main():
             cartoon_items.append(item)
         else:
             normal_items.append(item)
-
     quran_items.sort(key=lambda x: get_order(x.get("title", ""), QURAN_ORDER))
     nature_items.sort(key=lambda x: get_order(x.get("title", ""), NATURE_ORDER))
     history_items.sort(key=lambda x: get_order(x.get("title", ""), HISTORY_ORDER))
@@ -308,10 +289,8 @@ def main():
     israeli_items.sort(key=lambda x: get_order(x.get("title", ""), ISRAELI_ORDER))
     middle_items.sort(key=lambda x: get_order(x.get("title", ""), MIDDLE_ORDER))
     cartoon_items.sort(key=lambda x: get_order(x.get("title", ""), CARTOON_ORDER))
-
-    # الترتيب النهائي: عادي → قرآن → حياة طبيعية → تاريخ → مغربي → إسرائيلي → وسط → كارتون
-    final_items = normal_items + quran_items + nature_items + history_items + moroccan_items + israeli_items + middle_items + cartoon_items
-
+    # الترتيب النهائي: عادي → حياة طبيعية → تاريخ → مغربي → إسرائيلي → وسط → رسوم متحركة → قرآن (الأخيرة)
+    final_items = normal_items + nature_items + history_items + moroccan_items + israeli_items + middle_items + cartoon_items + quran_items
     lines = ["#EXTM3U"]
     total = 0
     groups = 0
@@ -351,6 +330,5 @@ def main():
     with open(OUTPUT, "w", encoding="utf-8") as out:
         out.write(content)
     print(f"\nDone: {groups} groups, {total} items → {OUTPUT}")
-
 if __name__ == "__main__":
     main()
