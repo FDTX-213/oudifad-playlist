@@ -1,4 +1,16 @@
 #EXTM3U
+#EXTINF:-1 tvg-name="محمد رسول الله" tvg-logo="https://archive.org/services/img/20261016_20261016_0929" group-title="أفلام إسلامية فارسية مدبلجة",محمد رسول الله
+https://archive.org/download/20261016_20261016_0929/00-%D9%85%D8%AD%D9%85%D8%AF%20%D8%B1%D8%B3%D9%88%D9%84%20%D8%A7%D9%84%D9%84%D9%87%202015.mkv
+#EXTINF:-1 tvg-name="النبي يوسف الصديق (ع)" tvg-logo="https://archive.org/services/img/20261016_20261016_0929" group-title="أفلام إسلامية فارسية مدبلجة",النبي يوسف الصديق (ع)
+https://archive.org/download/20261016_20261016_0929/01-%D8%A7%D9%84%D9%86%D8%A8%D9%8A%20%D9%8A%D9%88%D8%B3%D9%81%20%D8%A7%D9%84%D8%B5%D8%AF%D9%8A%D9%82%20%28%D8%B9%29%202008.mp4
+#EXTINF:-1 tvg-name="النبي يوسف الصديق (ع) وزليخا" tvg-logo="https://archive.org/services/img/20261016_20261016_0929" group-title="أفلام إسلامية فارسية مدبلجة",النبي يوسف الصديق (ع) وزليخا
+https://archive.org/download/20261016_20261016_0929/02-%D8%A7%D9%84%D9%86%D8%A8%D9%8A%20%D9%8A%D9%88%D8%B3%D9%81%20%D8%A7%D9%84%D8%B5%D8%AF%D9%8A%D9%82%20%28%D8%B9%29%20%D9%88%D8%B2%D9%84%D9%8A%D8%AE%D8%A7%202008.mp4
+#EXTINF:-1 tvg-name="أصحاب الكهف (ع)" tvg-logo="https://archive.org/services/img/20261016_20261016_0929" group-title="أفلام إسلامية فارسية مدبلجة",أصحاب الكهف (ع)
+https://archive.org/download/20261016_20261016_0929/03-%D8%A3%D8%B5%D8%AD%D8%A7%D8%A8%20%D8%A7%D9%84%D9%83%D9%87%D9%81%20%28%D8%B9%29%201999.mp4
+#EXTINF:-1 tvg-name="السيدة مريم المقدسة (ع)" tvg-logo="https://archive.org/services/img/20261016_20261016_0929" group-title="أفلام إسلامية فارسية مدبلجة",السيدة مريم المقدسة (ع)
+https://archive.org/download/20261016_20261016_0929/04-%D8%A7%D9%84%D8%B3%D9%8A%D8%AF%D8%A9%20%D9%85%D8%B1%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D9%82%D8%AF%D8%B3%D8%A9%20%28%D8%B9%29%202000.mp4
+#EXTINF:-1 tvg-name="مملكة سليمان (ع)" tvg-logo="https://archive.org/services/img/20261016_20261016_0929" group-title="أفلام إسلامية فارسية مدبلجة",مملكة سليمان (ع)
+https://archive.org/download/20261016_20261016_0929/05-%D9%85%D9%85%D9%84%D9%83%D8%A9%20%D8%B3%D9%84%D9%8A%D9%85%D8%A7%D9%86%20%28%D8%B9%29%202010.mp4
 #EXTINF:-1 tvg-name="(1) سورة الفاتحة - القارئ علي صلاح عمر" tvg-logo="https://archive.org/services/img/20260629_20260629_0014" group-title="القرآن الكريم القارئ علي صلاح عمر",(1) سورة الفاتحة - القارئ علي صلاح عمر
 https://archive.org/download/20260629_20260629_0014/001.%20%281%29%20%D8%B3%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D9%81%D8%A7%D8%AA%D8%AD%D8%A9%20-%20%D8%A7%D9%84%D9%82%D8%A7%D8%B1%D8%A6%20%D8%B9%D9%84%D9%8A%20%D8%B5%D9%84%D8%A7%D8%AD%20%D8%B9%D9%85%D8%B1.mp4
 #EXTINF:-1 tvg-name="(2) سورة البقرة - القارئ علي صلاح عمر" tvg-logo="https://archive.org/services/img/20260629_20260629_0014" group-title="القرآن الكريم القارئ علي صلاح عمر",(2) سورة البقرة - القارئ علي صلاح عمر
