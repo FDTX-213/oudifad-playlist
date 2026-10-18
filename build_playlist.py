@@ -163,7 +163,7 @@ def get_episode_number(filename):
     استخراج رقم الحلقة بذكاء:
     - يفضّل صيغة E100 / EP100 / Episode 100
     - ثم الرقم في بداية الاسم (1. 2. 10.)
-    - ثم أول رقم يظهر
+    - ثم أكبر رقم يظهر
     """
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     name = name.strip()
@@ -181,7 +181,6 @@ def get_episode_number(filename):
     # 3) أي رقم آخر (نأخذ الأكبر عادةً يكون رقم الحلقة)
     numbers = re.findall(r'\d+', name)
     if numbers:
-        # نفضّل الرقم الأكبر (في كونان غالباً رقم الحلقة هو الأكبر)
         return max(int(n) for n in numbers)
 
     return 0
@@ -230,9 +229,8 @@ def clean_name_special(filename):
 
 def get_list_type(title):
     t = title.lower()
-    for key in QURAN_ORDER:
-        if key.lower() in t:
-            return "quran"
+
+    # نفحص المجموعات الأخرى أولاً حتى لا يسرق "فؤاد الودودي" العناوين
     for key in NATURE_ORDER:
         if key.lower() in t:
             return "nature"
@@ -253,6 +251,12 @@ def get_list_type(title):
     for key in CARTOON_ORDER:
         if key.lower() in t:
             return "cartoon"
+
+    # القرآن في الأخير (حتى لا يلتقط العناوين التي تحتوي "فؤاد الودودي")
+    for key in QURAN_ORDER:
+        if key.lower() in t:
+            return "quran"
+
     return "normal"
 
 def get_order(title, order_list):
@@ -381,7 +385,6 @@ def main():
         is_special = is_special_item(ident, title)
 
         if is_special:
-            # ترتيب رقمي صحيح (E1 → E2 → ... → E10 → E11 → ... → E100 → E101)
             files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
         else:
             files.sort(key=lambda x: x["name"])
@@ -393,7 +396,6 @@ def main():
         logo = f"https://archive.org/services/img/{ident}"
         for f in files:
             fname = f["name"]
-            # لا نظهر الرقم في الاسم
             if ident in SPECIAL_SERIES:
                 ep = clean_name_special(fname)
             else:
