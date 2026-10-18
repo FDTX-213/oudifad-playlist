@@ -15,6 +15,7 @@ SPECIAL_TITLES = {
     "بلوي رسوم متحركة للأطفال",
     "السنافر الجديدة",
     "الماسة الزرقاء",
+    "المحقق كونان",          # ← أُضيفت هنا
 }
 
 # المجموعة 1: الحياة الطبيعية والاجتماعية
@@ -158,22 +159,29 @@ AUDIO_EXTS = (".mp3", ".m4a", ".ogg", ".flac", ".wav", ".aac", ".opus")
 
 def get_episode_number(filename):
     """
-    استخراج رقم الحلقة من بداية الاسم.
-    يفضّل الرقم الذي في أول الاسم مثل: 1.  2.  10.  11.
+    استخراج رقم الحلقة بذكاء:
+    - يفضّل صيغة E100 / EP100 / Episode 100
+    - ثم الرقم في بداية الاسم (1. 2. 10.)
+    - ثم أول رقم يظهر
     """
-    # إزالة الامتداد أولاً
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     name = name.strip()
 
-    # ابحث عن رقم في بداية الاسم (1. أو 1- أو 1 أو 01. ...)
+    # 1) صيغة E100 أو EP100 أو Episode 100 أو Ep 100
+    match = re.search(r'(?:EP?|Episode)\s*0*(\d+)', name, re.IGNORECASE)
+    if match:
+        return int(match.group(1))
+
+    # 2) رقم في بداية الاسم مثل: 1. أو 10- أو 001_
     match = re.match(r'^(\d+)[\.\-\s_]*', name)
     if match:
         return int(match.group(1))
 
-    # إذا لم يوجد في البداية، خذ أول رقم يظهر في الاسم
+    # 3) أي رقم آخر (نأخذ الأكبر عادةً يكون رقم الحلقة)
     numbers = re.findall(r'\d+', name)
     if numbers:
-        return int(numbers[0])
+        # نفضّل الرقم الأكبر (في كونان غالباً رقم الحلقة هو الأكبر)
+        return max(int(n) for n in numbers)
 
     return 0
 
@@ -372,7 +380,7 @@ def main():
         is_special = is_special_item(ident, title)
 
         if is_special:
-            # ترتيب رقمي صحيح حسب أول رقم في الاسم (1 ثم 2 ثم ... 10 ثم 11)
+            # ترتيب رقمي صحيح (E1 → E2 → ... → E10 → E11 → ... → E100 → E101)
             files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
         else:
             files.sort(key=lambda x: x["name"])
