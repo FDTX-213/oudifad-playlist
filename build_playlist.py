@@ -5,9 +5,18 @@ import re
 import urllib.parse
 import urllib.request
 import time
+
 UPLOADER = "ouadoudifouad334@gmail.com"
 OUTPUT = "playlist.m3u"
 SPECIAL_SERIES = {"20260925_20260925_1745"}
+
+# سلاسل نرتب حلقاتها حسب الرقم بدون إظهار الرقم
+SPECIAL_TITLES = {
+    "بلوي رسوم متحركة للأطفال",
+    "السنافر الجديدة",
+    "الماسة الزرقاء",
+}
+
 # المجموعة 1: الحياة الطبيعية والاجتماعية
 NATURE_ORDER = [
     "الألعاب الأولمبية والرياضية",
@@ -25,6 +34,7 @@ NATURE_ORDER = [
     "أماكن مع صوت المطر",
     "أمطار وعواصف رعدية",
 ]
+
 # المجموعة 2: التاريخ والثقافة والفكر
 HISTORY_ORDER = [
     "تعلم الرسم - بوب روس",
@@ -56,6 +66,7 @@ HISTORY_ORDER = [
     "الخلافة الإسلامية في ألف عام",
     "الفكر الإسلامي المعاصر",
 ]
+
 # المجموعة 3: المحتوى المغربي
 MOROCCAN_ORDER = [
     "التصوف العرفاني",
@@ -65,6 +76,7 @@ MOROCCAN_ORDER = [
     "أفلام ومسرحيات مغربية",
     "تاريخ ملوك المغرب العلويين",
 ]
+
 # المجموعة 4: المحتوى الإسرائيلي والعبري
 ISRAELI_ORDER = [
     "تعلم العبرية مع داوود",
@@ -85,6 +97,7 @@ ISRAELI_ORDER = [
     "الكتاب المقدس - العهد القديم بالعربية",
     "الكتاب المقدس - العهد الجديد",
 ]
+
 # المجموعة 5: الأغاني والأفلام
 MIDDLE_ORDER = [
     "قداسة البابا تواضروس الثاني",
@@ -101,6 +114,7 @@ MIDDLE_ORDER = [
     "أغاني روسية خاصة بفؤاد الودودي",
     "أغاني عربية خاصة بفؤاد الودودي",
 ]
+
 # المجموعة 6: الرسوم المتحركة
 CARTOON_ORDER = [
     "مخلص صديق الحيوان",
@@ -127,6 +141,7 @@ CARTOON_ORDER = [
     "أغاني رسوم متحركة كلاسيكية",
     "الحلقة الأولى من رسوم متحركة كلاسيكية",
 ]
+
 # المجموعة 7: القرآن الكريم (الأخيرة)
 QURAN_ORDER = [
     "القرآن الكريم القارئ علي صلاح عمر",
@@ -137,13 +152,26 @@ QURAN_ORDER = [
     "ختمة الأجزاء الشيخ محمود خليل الحصري رحمه الله برواية حفص عن عاصم",
     "أسطوانات الشيخ محمود خليل الحصري رحمه الله",
 ]
+
 VIDEO_EXTS = (".mp4", ".mkv", ".webm", ".avi", ".mov", ".m4v", ".ts", ".flv")
 AUDIO_EXTS = (".mp3", ".m4a", ".ogg", ".flac", ".wav", ".aac", ".opus")
+
 def get_episode_number(filename):
     numbers = re.findall(r'\d+', filename)
     if numbers:
         return int(numbers[-1])
     return 0
+
+def is_special_item(ident, title):
+    """سلاسل نرتب حلقاتها حسب الرقم"""
+    if ident in SPECIAL_SERIES:
+        return True
+    t = (title or "").lower()
+    for key in SPECIAL_TITLES:
+        if key.lower() in t:
+            return True
+    return False
+
 def clean_name_normal(filename):
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     name = re.sub(r"^\d+[\.\-]?\s*", "", name)
@@ -157,6 +185,7 @@ def clean_name_normal(filename):
     name = re.sub(r"\s+", " ", name).strip()
     name = re.sub(r"[_\-\s\.]+$", "", name)
     return name or filename
+
 def clean_name_special(filename):
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     ep_num = get_episode_number(name)
@@ -174,6 +203,7 @@ def clean_name_special(filename):
     if ep_num > 0:
         return f"{ep_num:03d} - {name}" if name else f"{ep_num:03d}"
     return name or filename
+
 def get_list_type(title):
     t = title.lower()
     for key in QURAN_ORDER:
@@ -200,12 +230,14 @@ def get_list_type(title):
         if key.lower() in t:
             return "cartoon"
     return "normal"
+
 def get_order(title, order_list):
     t = title.lower()
     for i, key in enumerate(order_list):
         if key.lower() in t:
             return i
     return 999
+
 def get_quality_score(f):
     name = f.get("name", "").lower()
     size = int(f.get("size", 0) or 0)
@@ -217,6 +249,7 @@ def get_quality_score(f):
     if not name.endswith(".ia.mp4") and "512kb" not in name:
         score += 1_000_000_000
     return score
+
 def get_files(meta):
     files = meta.get("files", [])
     candidates = {}
@@ -241,6 +274,7 @@ def get_files(meta):
         f.pop("_score", None)
         result.append(f)
     return result
+
 def main():
     print("Fetching items list...")
     search_url = (
@@ -258,6 +292,7 @@ def main():
         data = json.load(r)
     items = data.get("response", {}).get("docs", [])
     print(f"Found {len(items)} items")
+
     normal_items = []
     quran_items = []
     nature_items = []
@@ -266,6 +301,7 @@ def main():
     israeli_items = []
     middle_items = []
     cartoon_items = []
+
     for item in items:
         title = item.get("title") or item["identifier"]
         list_type = get_list_type(title)
@@ -285,6 +321,7 @@ def main():
             cartoon_items.append(item)
         else:
             normal_items.append(item)
+
     quran_items.sort(key=lambda x: get_order(x.get("title", ""), QURAN_ORDER))
     nature_items.sort(key=lambda x: get_order(x.get("title", ""), NATURE_ORDER))
     history_items.sort(key=lambda x: get_order(x.get("title", ""), HISTORY_ORDER))
@@ -292,11 +329,14 @@ def main():
     israeli_items.sort(key=lambda x: get_order(x.get("title", ""), ISRAELI_ORDER))
     middle_items.sort(key=lambda x: get_order(x.get("title", ""), MIDDLE_ORDER))
     cartoon_items.sort(key=lambda x: get_order(x.get("title", ""), CARTOON_ORDER))
+
     # الترتيب النهائي: عادي → حياة طبيعية → تاريخ → مغربي → إسرائيلي → وسط → رسوم متحركة → قرآن (الأخيرة)
     final_items = normal_items + nature_items + history_items + moroccan_items + israeli_items + middle_items + cartoon_items + quran_items
+
     lines = ["#EXTM3U"]
     total = 0
     groups = 0
+
     for item in final_items:
         ident = item["identifier"]
         title = (item.get("title") or ident).replace('"', "'")
@@ -308,30 +348,43 @@ def main():
         except Exception as e:
             print(f"    SKIP: {e}")
             continue
+
         files = get_files(meta)
         if not files:
             print(f"    → no media files")
             continue
-        is_special = ident in SPECIAL_SERIES
+
+        is_special = is_special_item(ident, title)
+
         if is_special:
+            # ترتيب حسب رقم الحلقة
             files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
         else:
             files.sort(key=lambda x: x["name"])
+
         groups += 1
         list_type = get_list_type(title)
         print(f"    → {len(files)} files [{list_type.upper()}]")
+
         logo = f"https://archive.org/services/img/{ident}"
         for f in files:
             fname = f["name"]
-            ep = clean_name_special(fname) if is_special else clean_name_normal(fname)
+            # لا نظهر الرقم في الاسم (نستخدم التنظيف العادي دائماً لهذه السلاسل)
+            if ident in SPECIAL_SERIES:
+                ep = clean_name_special(fname)
+            else:
+                ep = clean_name_normal(fname)
+
             url = f"https://archive.org/download/{ident}/" + urllib.parse.quote(fname)
             lines.append(f'#EXTINF:-1 tvg-name="{ep}" tvg-logo="{logo}" group-title="{title}",{ep}')
             lines.append(url)
             total += 1
         time.sleep(0.3)
+
     content = "\n".join(lines) + "\n"
     with open(OUTPUT, "w", encoding="utf-8") as out:
         out.write(content)
     print(f"\nDone: {groups} groups, {total} items → {OUTPUT}")
+
 if __name__ == "__main__":
     main()
