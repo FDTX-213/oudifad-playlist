@@ -1,3 +1,4 @@
+```python
 #!/usr/bin/env python3
 """Build M3U playlist with multiple custom ordered groups."""
 import json
@@ -8,6 +9,7 @@ import time
 
 UPLOADER = "ouadoudifouad334@gmail.com"
 OUTPUT = "playlist.m3u"
+
 SPECIAL_SERIES = {"20260925_20260925_1745"}
 
 # سلاسل نرتب حلقاتها حسب الرقم بدون إظهار الرقم
@@ -17,6 +19,11 @@ SPECIAL_TITLES = {
     "الماسة الزرقاء",
     "المحقق كونان",
     "BIBI",
+}
+
+# عناوين نحتفظ فيها بالرقم الموجود بين قوسين ونرتبها ترتيباً طبيعياً
+KEEP_NUMBER_TITLES = {
+    "BXL",
 }
 
 # المجموعة 1: الحياة الطبيعية والاجتماعية
@@ -162,6 +169,7 @@ QURAN_ORDER = [
 VIDEO_EXTS = (".mp4", ".mkv", ".webm", ".avi", ".mov", ".m4v", ".ts", ".flv")
 AUDIO_EXTS = (".mp3", ".m4a", ".ogg", ".flac", ".wav", ".aac", ".opus")
 
+
 def get_episode_number(filename):
     """
     استخراج رقم الحلقة بذكاء:
@@ -171,23 +179,20 @@ def get_episode_number(filename):
     """
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     name = name.strip()
-
     # 1) صيغة E100 أو EP100 أو Episode 100 أو Ep 100
     match = re.search(r'(?:EP?|Episode)\s*0*(\d+)', name, re.IGNORECASE)
     if match:
         return int(match.group(1))
-
     # 2) رقم في بداية الاسم مثل: 1. أو 10- أو 001_
     match = re.match(r'^(\d+)[\.\-\s_]*', name)
     if match:
         return int(match.group(1))
-
     # 3) أي رقم آخر (نأخذ الأكبر عادةً يكون رقم الحلقة)
     numbers = re.findall(r'\d+', name)
     if numbers:
         return max(int(n) for n in numbers)
-
     return 0
+
 
 def is_special_item(ident, title):
     """سلاسل نرتب حلقاتها حسب الرقم"""
@@ -198,6 +203,19 @@ def is_special_item(ident, title):
         if key.lower() in t:
             return True
     return False
+
+
+def is_keep_number(title):
+    """عناوين نحتفظ فيها بالرقم الموجود بين قوسين"""
+    t = (title or "").lower()
+    return any(key.lower() in t for key in KEEP_NUMBER_TITLES)
+
+
+def natural_key(s):
+    """ترتيب طبيعي: الأرقام تُعامل كأرقام وليس كنص"""
+    return [int(text) if text.isdigit() else text.lower()
+            for text in re.split(r'(\d+)', s)]
+
 
 def clean_name_normal(filename):
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
@@ -212,6 +230,7 @@ def clean_name_normal(filename):
     name = re.sub(r"\s+", " ", name).strip()
     name = re.sub(r"[_\-\s\.]+$", "", name)
     return name or filename
+
 
 def clean_name_special(filename):
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
@@ -231,9 +250,23 @@ def clean_name_special(filename):
         return f"{ep_num:03d} - {name}" if name else f"{ep_num:03d}"
     return name or filename
 
+
+def clean_name_keep(filename):
+    """تنظيف خفيف مع الإبقاء على الرقم بين قوسين في النهاية"""
+    name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
+    name = re.sub(r"^\d+[\.\-]?\s*", "", name)
+    name = re.sub(r"^HE-\d+-", "", name)
+    name = re.sub(r"^\d{4,}-", "", name)
+    name = re.sub(r"\s*\d{3,4}p\b", "", name, flags=re.I)
+    name = re.sub(r"\s*(WEB-?DL|BluRay|BRRip|HDRip|x264|h264|AAC|HEVC|HD)\b", "", name, flags=re.I)
+    # لا نحذف (رقم) ولا الرقم في النهاية
+    name = re.sub(r"\s+", " ", name).strip()
+    name = re.sub(r"[_\-\s\.]+$", "", name)
+    return name or filename
+
+
 def get_list_type(title):
     t = title.lower()
-
     # نفحص المجموعات الأخرى أولاً حتى لا يسرق "فؤاد الودودي" العناوين
     for key in NATURE_ORDER:
         if key.lower() in t:
@@ -255,13 +288,12 @@ def get_list_type(title):
     for key in CARTOON_ORDER:
         if key.lower() in t:
             return "cartoon"
-
     # القرآن في الأخير (حتى لا يلتقط العناوين التي تحتوي "فؤاد الودودي")
     for key in QURAN_ORDER:
         if key.lower() in t:
             return "quran"
-
     return "normal"
+
 
 def get_order(title, order_list):
     t = title.lower()
@@ -269,6 +301,7 @@ def get_order(title, order_list):
         if key.lower() in t:
             return i
     return 999
+
 
 def get_quality_score(f):
     name = f.get("name", "").lower()
@@ -281,6 +314,7 @@ def get_quality_score(f):
     if not name.endswith(".ia.mp4") and "512kb" not in name:
         score += 1_000_000_000
     return score
+
 
 def get_files(meta):
     files = meta.get("files", [])
@@ -306,6 +340,7 @@ def get_files(meta):
         f.pop("_score", None)
         result.append(f)
     return result
+
 
 def main():
     print("Fetching items list...")
@@ -387,24 +422,28 @@ def main():
             continue
 
         is_special = is_special_item(ident, title)
+        is_keep = is_keep_number(title)
 
         if is_special:
             files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
+        elif is_keep:
+            # ترتيب طبيعي حسب الاسم (لاتيني أولاً ثم عربي + أرقام صحيحة)
+            files.sort(key=lambda x: natural_key(x["name"]))
         else:
             files.sort(key=lambda x: x["name"])
 
         groups += 1
         list_type = get_list_type(title)
         print(f"    → {len(files)} files [{list_type.upper()}]")
-
         logo = f"https://archive.org/services/img/{ident}"
         for f in files:
             fname = f["name"]
-            if ident in SPECIAL_SERIES:
+            if is_special:
                 ep = clean_name_special(fname)
+            elif is_keep:
+                ep = clean_name_keep(fname)
             else:
                 ep = clean_name_normal(fname)
-
             url = f"https://archive.org/download/{ident}/" + urllib.parse.quote(fname)
             lines.append(f'#EXTINF:-1 tvg-name="{ep}" tvg-logo="{logo}" group-title="{title}",{ep}')
             lines.append(url)
@@ -416,5 +455,7 @@ def main():
         out.write(content)
     print(f"\nDone: {groups} groups, {total} items → {OUTPUT}")
 
+
 if __name__ == "__main__":
     main()
+```
