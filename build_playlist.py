@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """Build M3U playlist with multiple custom ordered groups."""
 import json
@@ -458,4 +457,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
