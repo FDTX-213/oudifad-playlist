@@ -11,17 +11,12 @@ OUTPUT = "playlist.m3u"
 
 SPECIAL_SERIES = {"20260925_20260925_1745"}
 
-# سلاسل نرتب حلقاتها حسب الرقم بدون إظهار الرقم
+# سلاسل نرتب حلقاتها حسب الرقم بدون إظهار الرقم الأصلي
 SPECIAL_TITLES = {
     "بلوي رسوم متحركة للأطفال",
     "السنافر الجديدة",
     "الماسة الزرقاء",
     "المحقق كونان",
-}
-
-# عناوين نحتفظ فيها بالرقم الموجود بين قوسين ونرتبها ترتيباً طبيعياً
-KEEP_NUMBER_TITLES = {
-    "BXL",
 }
 
 # المجموعة 1: الحياة الطبيعية والاجتماعية
@@ -203,10 +198,18 @@ def is_special_item(ident, title):
     return False
 
 
-def is_keep_number(title):
-    """عناوين نحتفظ فيها بالرقم الموجود بين قوسين"""
-    t = (title or "").lower()
-    return any(key.lower() in t for key in KEEP_NUMBER_TITLES)
+def has_trailing_paren_number(files):
+    """يتحقق إذا كانت أغلب الملفات تنتهي برقم بين قوسين مثل (1) أو (28)"""
+    if not files:
+        return False
+    count = 0
+    for f in files:
+        name = f.get("name", "")
+        base = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", name, flags=re.I)
+        if re.search(r'\(\d+\)\s*$', base):
+            count += 1
+    # إذا كان نصف الملفات أو أكثر يحتوي على الرقم بين قوسين
+    return count >= max(1, len(files) * 0.5)
 
 
 def natural_key(s):
@@ -420,19 +423,20 @@ def main():
             continue
 
         is_special = is_special_item(ident, title)
-        is_keep = is_keep_number(title)
+        is_keep = (not is_special) and has_trailing_paren_number(files)
 
         if is_special:
             files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
         elif is_keep:
-            # ترتيب طبيعي حسب الاسم (لاتيني أولاً ثم عربي + أرقام صحيحة)
+            # ترتيب طبيعي + الإبقاء على الرقم بين قوسين
             files.sort(key=lambda x: natural_key(x["name"]))
         else:
             files.sort(key=lambda x: x["name"])
 
         groups += 1
         list_type = get_list_type(title)
-        print(f"    → {len(files)} files [{list_type.upper()}]")
+        keep_flag = "KEEP" if is_keep else list_type.upper()
+        print(f"    → {len(files)} files [{keep_flag}]")
         logo = f"https://archive.org/services/img/{ident}"
         for f in files:
             fname = f["name"]
