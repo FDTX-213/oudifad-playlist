@@ -169,19 +169,22 @@ def get_episode_number(filename):
     """
     استخراج رقم الحلقة بذكاء:
     - يفضّل صيغة E100 / EP100 / Episode 100
-    - ثم الرقم في بداية الاسم (1. 2. 10.)
+    - ثم الرقم في بداية الاسم (1. 2. 10. 09-)
     - ثم أكبر رقم يظهر
     """
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     name = name.strip()
+
     # 1) صيغة E100 أو EP100 أو Episode 100 أو Ep 100
     match = re.search(r'(?:EP?|Episode)\s*0*(\d+)', name, re.IGNORECASE)
     if match:
         return int(match.group(1))
-    # 2) رقم في بداية الاسم مثل: 1. أو 10- أو 001_
+
+    # 2) رقم في بداية الاسم مثل: 1. أو 10- أو 001_ أو 09-
     match = re.match(r'^(\d+)[\.\-\s_]*', name)
     if match:
         return int(match.group(1))
+
     # 3) أي رقم آخر (نأخذ الأكبر عادةً يكون رقم الحلقة)
     numbers = re.findall(r'\d+', name)
     if numbers:
@@ -210,7 +213,19 @@ def has_trailing_paren_number(files):
         base = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", name, flags=re.I)
         if re.search(r'\(\d+\)\s*$', base):
             count += 1
-    # إذا كان نصف الملفات أو أكثر يحتوي على الرقم بين قوسين
+    return count >= max(1, len(files) * 0.5)
+
+
+def has_leading_number(files):
+    """يتحقق إذا كانت أغلب الملفات تبدأ برقم مثل 1. أو 09- أو 001_"""
+    if not files:
+        return False
+    count = 0
+    for f in files:
+        name = f.get("name", "")
+        base = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", name, flags=re.I)
+        if re.match(r'^\d+[\.\-\s_]', base):
+            count += 1
     return count >= max(1, len(files) * 0.5)
 
 
@@ -411,6 +426,7 @@ def main():
         ident = item["identifier"]
         title = (item.get("title") or ident).replace('"', "'")
         print(f"  Processing: {title[:60]}...")
+
         try:
             meta_url = f"https://archive.org/metadata/{ident}"
             with urllib.request.urlopen(meta_url, timeout=45) as r:
@@ -426,19 +442,29 @@ def main():
 
         is_special = is_special_item(ident, title)
         is_keep = (not is_special) and has_trailing_paren_number(files)
+        is_leading = (not is_special) and (not is_keep) and has_leading_number(files)
 
         if is_special:
             files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
         elif is_keep:
             # ترتيب طبيعي + الإبقاء على الرقم بين قوسين
             files.sort(key=lambda x: natural_key(x["name"]))
+        elif is_leading:
+            # ترتيب رقمي حسب الرقم في البداية (1. 2. 09- ...) مع إخفاء الرقم
+            files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
         else:
             files.sort(key=lambda x: x["name"])
 
         groups += 1
         list_type = get_list_type(title)
-        keep_flag = "KEEP" if is_keep else list_type.upper()
+        if is_keep:
+            keep_flag = "KEEP"
+        elif is_leading:
+            keep_flag = "LEADING"
+        else:
+            keep_flag = list_type.upper()
         print(f"    → {len(files)} files [{keep_flag}]")
+
         logo = f"https://archive.org/services/img/{ident}"
         for f in files:
             fname = f["name"]
@@ -447,16 +473,20 @@ def main():
             elif is_keep:
                 ep = clean_name_keep(fname)
             else:
+                # clean_name_normal يحذف الرقم من البداية تلقائياً
                 ep = clean_name_normal(fname)
+
             url = f"https://archive.org/download/{ident}/" + urllib.parse.quote(fname)
             lines.append(f'#EXTINF:-1 tvg-name="{ep}" tvg-logo="{logo}" group-title="{title}",{ep}')
             lines.append(url)
             total += 1
+
         time.sleep(0.3)
 
     content = "\n".join(lines) + "\n"
     with open(OUTPUT, "w", encoding="utf-8") as out:
         out.write(content)
+
     print(f"\nDone: {groups} groups, {total} items → {OUTPUT}")
 
 
