@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Build M3U playlist with multiple custom ordered groups."""
+"""Build M3U playlist with multiple custom ordered groups.
+Low-quality versions (.ia.mp4, 512kb, ...) appear alongside high-quality originals.
+"""
 import json
 import re
 import urllib.parse
@@ -181,17 +183,14 @@ def get_episode_number(filename):
     """
     name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     name = name.strip()
-
     # 1) صيغة E100 أو EP100 أو Episode 100 أو Ep 100
     match = re.search(r'(?:EP?|Episode)\s*0*(\d+)', name, re.IGNORECASE)
     if match:
         return int(match.group(1))
-
     # 2) رقم في بداية الاسم مثل: 1. أو 10- أو 001_ أو 09-
     match = re.match(r'^(\d+)[\.\-\s_]*', name)
     if match:
         return int(match.group(1))
-
     # 3) أي رقم آخر (نأخذ الأكبر عادةً يكون رقم الحلقة)
     numbers = re.findall(r'\d+', name)
     if numbers:
@@ -278,7 +277,7 @@ def clean_name_special(filename):
 
 def clean_name_keep(filename):
     """تنظيف خفيف مع الإبقاء على الرقم بين قوسين في النهاية"""
-    name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
+    name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", name, flags=re.I)
     name = re.sub(r"^\d+[\.\-]?\s*", "", name)
     name = re.sub(r"^HE-\d+-", "", name)
     name = re.sub(r"^\d{4,}-", "", name)
@@ -328,6 +327,16 @@ def get_order(title, order_list):
     return 999
 
 
+def is_low_quality(f):
+    """يحدد إذا كان الملف ذا جودة ضعيفة"""
+    name = f.get("name", "").lower()
+    if name.endswith(".ia.mp4"):
+        return True
+    if any(x in name for x in ["512kb", "256kb", "128kb", "64kb", "low", "small"]):
+        return True
+    return False
+
+
 def get_quality_score(f):
     name = f.get("name", "").lower()
     size = int(f.get("size", 0) or 0)
@@ -342,8 +351,14 @@ def get_quality_score(f):
 
 
 def get_files(meta):
+    """
+    يجمع الملفات مع الاحتفاظ بالنسخ عالية الجودة والنسخ الضعيفة معاً.
+    لكل اسم أساسي نحتفظ بأفضل نسخة عالية الجودة + أي نسخة ضعيفة موجودة.
+    """
     files = meta.get("files", [])
-    candidates = {}
+    # نجمع حسب الاسم الأساسي (بدون الامتداد وبدون .ia)
+    groups = {}  # base -> {"high": best_high_file, "low": [low_files]}
+
     for f in files:
         name = f.get("name", "")
         lower = name.lower()
@@ -355,15 +370,31 @@ def get_files(meta):
         is_audio = any(lower.endswith(ext) for ext in AUDIO_EXTS)
         if not (is_video or is_audio):
             continue
+
+        # الاسم الأساسي بدون .ia وبدون الامتداد
         base = re.sub(r"(\.ia)?\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus)$", "", name, flags=re.I)
-        score = get_quality_score(f)
-        if base not in candidates or score > candidates[base].get("_score", -1):
-            f["_score"] = score
-            candidates[base] = f
+
+        if base not in groups:
+            groups[base] = {"high": None, "low": []}
+
+        if is_low_quality(f):
+            groups[base]["low"].append(f)
+        else:
+            # نختار أفضل نسخة عالية الجودة فقط
+            score = get_quality_score(f)
+            current = groups[base]["high"]
+            if current is None or score > get_quality_score(current):
+                groups[base]["high"] = f
+
     result = []
-    for f in candidates.values():
-        f.pop("_score", None)
-        result.append(f)
+    for base, data in groups.items():
+        # نضيف النسخة العالية أولاً إن وُجدت
+        if data["high"] is not None:
+            result.append(data["high"])
+        # ثم نضيف كل النسخ الضعيفة
+        for low_f in data["low"]:
+            result.append(low_f)
+
     return result
 
 
@@ -433,7 +464,6 @@ def main():
         ident = item["identifier"]
         title = (item.get("title") or ident).replace('"', "'")
         print(f"  Processing: {title[:60]}...")
-
         try:
             meta_url = f"https://archive.org/metadata/{ident}"
             with urllib.request.urlopen(meta_url, timeout=45) as r:
@@ -452,15 +482,15 @@ def main():
         is_leading = (not is_special) and (not is_keep) and has_leading_number(files)
 
         if is_special:
-            files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
+            files.sort(key=lambda x: (get_episode_number(x["name"]), is_low_quality(x), x["name"].lower()))
         elif is_keep:
             # ترتيب طبيعي + الإبقاء على الرقم بين قوسين
-            files.sort(key=lambda x: natural_key(x["name"]))
+            files.sort(key=lambda x: (natural_key(x["name"]), is_low_quality(x)))
         elif is_leading:
             # ترتيب رقمي حسب الرقم في البداية (1. 2. 09- ...) مع إخفاء الرقم
-            files.sort(key=lambda x: (get_episode_number(x["name"]), x["name"].lower()))
+            files.sort(key=lambda x: (get_episode_number(x["name"]), is_low_quality(x), x["name"].lower()))
         else:
-            files.sort(key=lambda x: x["name"])
+            files.sort(key=lambda x: (x["name"].lower(), is_low_quality(x)))
 
         groups += 1
         list_type = get_list_type(title)
@@ -483,17 +513,19 @@ def main():
                 # clean_name_normal يحذف الرقم من البداية تلقائياً
                 ep = clean_name_normal(fname)
 
+            # تمييز النسخة الضعيفة في العنوان
+            if is_low_quality(f):
+                ep = f"{ep} [جودة ضعيفة]"
+
             url = f"https://archive.org/download/{ident}/" + urllib.parse.quote(fname)
             lines.append(f'#EXTINF:-1 tvg-name="{ep}" tvg-logo="{logo}" group-title="{title}",{ep}')
             lines.append(url)
             total += 1
-
         time.sleep(0.3)
 
     content = "\n".join(lines) + "\n"
     with open(OUTPUT, "w", encoding="utf-8") as out:
         out.write(content)
-
     print(f"\nDone: {groups} groups, {total} items → {OUTPUT}")
 
 
