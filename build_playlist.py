@@ -277,7 +277,7 @@ def clean_name_special(filename):
 
 def clean_name_keep(filename):
     """تنظيف خفيف مع الإبقاء على الرقم بين قوسين في النهاية"""
-    name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", name, flags=re.I)
+    name = re.sub(r"\.(mp4|mkv|webm|avi|mov|m4v|ts|flv|mp3|m4a|ogg|flac|wav|aac|opus|ia\.mp4)$", "", filename, flags=re.I)
     name = re.sub(r"^\d+[\.\-]?\s*", "", name)
     name = re.sub(r"^HE-\d+-", "", name)
     name = re.sub(r"^\d{4,}-", "", name)
