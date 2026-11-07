@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Build M3U playlist with multiple custom ordered groups."""
+"""Build M3U playlist with multiple custom ordered groups.
+High-quality originals only (low-quality .ia.mp4 / 512kb versions are excluded).
+Includes VLC/IPTV buffering options to reduce stuttering.
+"""
 import json
 import re
 import urllib.parse
@@ -485,6 +488,10 @@ def main():
 
             url = f"https://archive.org/download/{ident}/" + urllib.parse.quote(fname)
             lines.append(f'#EXTINF:-1 tvg-name="{ep}" tvg-logo="{logo}" group-title="{title}",{ep}')
+            # خيارات التخزين المؤقت لتقليل التقطيع (تدعمها VLC ومعظم مشغلات IPTV)
+            lines.append('#EXTVLCOPT:network-caching=5000')
+            lines.append('#EXTVLCOPT:http-reconnect=true')
+            lines.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0')
             lines.append(url)
             total += 1
 
