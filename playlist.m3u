@@ -340,7 +340,7 @@ https://archive.org/download/20261114_20261114_0440/004-Videos%20XL%20EN%20%281%
 #EXTINF:-1 tvg-name="Videos XL EN (2)" tvg-logo="https://archive.org/services/img/20261114_20261114_0440" group-title="BXL",Videos XL EN (2)
 https://archive.org/download/20261114_20261114_0440/004-Videos%20XL%20EN%20%282%29.mkv
 #EXTINF:-1 tvg-name="Videos XL FR (1)" tvg-logo="https://archive.org/services/img/20261114_20261114_0440" group-title="BXL",Videos XL FR (1)
-https://archive.org/download/20261114_20261114_0440/005-Videos%20XL%20FR%20%281%29.mp4
+https://archive.org/download/20261114_20261114_0440/005-Videos%20XL%20FR%20%281%29.mkv
 #EXTINF:-1 tvg-name="Videos XL FR (2)" tvg-logo="https://archive.org/services/img/20261114_20261114_0440" group-title="BXL",Videos XL FR (2)
 https://archive.org/download/20261114_20261114_0440/005-Videos%20XL%20FR%20%282%29.mp4
 #EXTINF:-1 tvg-name="Videos XL IT (1)" tvg-logo="https://archive.org/services/img/20261114_20261114_0440" group-title="BXL",Videos XL IT (1)
@@ -712,7 +712,7 @@ https://archive.org/download/20261114_20261114_0440/%D9%86%D9%87%D8%AC%20%D8%A7%
 #EXTINF:-1 tvg-name="واي فاي الخاص بك يراقبك" tvg-logo="https://archive.org/services/img/20261114_20261114_0440" group-title="BXL",واي فاي الخاص بك يراقبك
 https://archive.org/download/20261114_20261114_0440/%D9%88%D8%A7%D9%8A%20%D9%81%D8%A7%D9%8A%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D8%A8%D9%83%20%D9%8A%D8%B1%D8%A7%D9%82%D8%A8%D9%83.mp4
 #EXTINF:-1 tvg-name="ي مصطفى محمود مقاطع قصيرة مجمعة" tvg-logo="https://archive.org/services/img/20261114_20261114_0440" group-title="BXL",ي مصطفى محمود مقاطع قصيرة مجمعة
-https://archive.org/download/20261114_20261114_0440/%D9%8A%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%20%D9%85%D9%82%D8%A7%D8%B7%D8%B9%20%D9%82%D8%B5%D9%8A%D8%B1%D8%A9%20%D9%85%D8%AC%D9%85%D8%B9%D8%A9.mp4
+https://archive.org/download/20261114_20261114_0440/%D9%8A%20%D9%85%D8%B5%D8%B7%D9%81%D9%89%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%20%D9%85%D9%82%D8%A7%D8%B7%D8%B9%20%D9%82%D8%B5%D9%8A%D8%B1%D8%A9%20%D9%85%D8%AC%D9%85%D8%B9%D8%A9.mkv
 #EXTINF:-1 tvg-name="COVID-19 Animation- What Happens If You Get Coronavirus" tvg-logo="https://archive.org/services/img/20260923_20260923_0149" group-title="علوم الحياة والأرض",COVID-19 Animation- What Happens If You Get Coronavirus
 https://archive.org/download/20260923_20260923_0149/1.%20COVID-19%20Animation-%20What%20Happens%20If%20You%20Get%20Coronavirus_.mp4
 #EXTINF:-1 tvg-name="DNA animation (2002-2014) by Drew Berry and Etsuko Uno wehi.tv #ScienceArt" tvg-logo="https://archive.org/services/img/20260923_20260923_0149" group-title="علوم الحياة والأرض",DNA animation (2002-2014) by Drew Berry and Etsuko Uno wehi.tv #ScienceArt
@@ -19939,12 +19939,18 @@ https://archive.org/download/20261113_20261113_0212/%D8%B1%D9%88%D8%A8%D9%86%20%
 https://archive.org/download/20261113_20261113_0212/%D8%B1%D9%88%D8%A8%D9%86%20%D9%87%D9%88%D8%AF%20%289%29.mkv
 #EXTINF:-1 tvg-name="010 - الحلقة العاشرة" tvg-logo="https://archive.org/services/img/20261113_20261113_0212" group-title="روبن هود رسوم متحركة للأطفال",010 - الحلقة العاشرة
 https://archive.org/download/20261113_20261113_0212/10.%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%20%D8%A7%D9%84%D8%B9%D8%A7%D8%B4%D8%B1%D8%A9.mkv
+#EXTINF:-1 tvg-name="011 - الحلقة الحادية عشر" tvg-logo="https://archive.org/services/img/20261113_20261113_0212" group-title="روبن هود رسوم متحركة للأطفال",011 - الحلقة الحادية عشر
+https://archive.org/download/20261113_20261113_0212/11.%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%20%D8%A7%D9%84%D8%AD%D8%A7%D8%AF%D9%8A%D8%A9%20%D8%B9%D8%B4%D8%B1.mkv
 #EXTINF:-1 tvg-name="011 - روبن هود" tvg-logo="https://archive.org/services/img/20261113_20261113_0212" group-title="روبن هود رسوم متحركة للأطفال",011 - روبن هود
-https://archive.org/download/20261113_20261113_0212/%D8%B1%D9%88%D8%A8%D9%86%20%D9%87%D9%88%D8%AF%20%2811%29.mkv
+https://archive.org/download/20261113_20261113_0212/%D8%B1%D9%88%D8%A8%D9%86%20%D9%87%D9%88%D8%AF%20%2811%29.mp4
+#EXTINF:-1 tvg-name="012 - الحلقة الثانية عشر" tvg-logo="https://archive.org/services/img/20261113_20261113_0212" group-title="روبن هود رسوم متحركة للأطفال",012 - الحلقة الثانية عشر
+https://archive.org/download/20261113_20261113_0212/12.%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%D8%A9%20%D8%B9%D8%B4%D8%B1.mkv
 #EXTINF:-1 tvg-name="012 - روبن هود" tvg-logo="https://archive.org/services/img/20261113_20261113_0212" group-title="روبن هود رسوم متحركة للأطفال",012 - روبن هود
-https://archive.org/download/20261113_20261113_0212/%D8%B1%D9%88%D8%A8%D9%86%20%D9%87%D9%88%D8%AF%20%2812%29.mkv
+https://archive.org/download/20261113_20261113_0212/%D8%B1%D9%88%D8%A8%D9%86%20%D9%87%D9%88%D8%AF%20%2812%29.mp4
+#EXTINF:-1 tvg-name="013 - الحلقة الثالثة عشر" tvg-logo="https://archive.org/services/img/20261113_20261113_0212" group-title="روبن هود رسوم متحركة للأطفال",013 - الحلقة الثالثة عشر
+https://archive.org/download/20261113_20261113_0212/13.%20%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9%20%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%D8%A9%20%D8%B9%D8%B4%D8%B1.mkv
 #EXTINF:-1 tvg-name="013 - روبن هود" tvg-logo="https://archive.org/services/img/20261113_20261113_0212" group-title="روبن هود رسوم متحركة للأطفال",013 - روبن هود
-https://archive.org/download/20261113_20261113_0212/%D8%B1%D9%88%D8%A8%D9%86%20%D9%87%D9%88%D8%AF%20%2813%29.mkv
+https://archive.org/download/20261113_20261113_0212/%D8%B1%D9%88%D8%A8%D9%86%20%D9%87%D9%88%D8%AF%20%2813%29.mp4
 #EXTINF:-1 tvg-name="014 - روبن هود" tvg-logo="https://archive.org/services/img/20261113_20261113_0212" group-title="روبن هود رسوم متحركة للأطفال",014 - روبن هود
 https://archive.org/download/20261113_20261113_0212/%D8%B1%D9%88%D8%A8%D9%86%20%D9%87%D9%88%D8%AF%20%2814%29.mkv
 #EXTINF:-1 tvg-name="015 - روبن هود" tvg-logo="https://archive.org/services/img/20261113_20261113_0212" group-title="روبن هود رسوم متحركة للأطفال",015 - روبن هود
